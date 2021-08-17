@@ -35,7 +35,7 @@
   :ensure nil
   :bind (:map c-mode-base-map
          ("C-c c" . compile))
-  :hook (c-mode-common . (lambda () (c-set-style "gnu")))
+  :hook (c-mode-common . (lambda () (c-set-style "java")))
   :init
   (setq-default c-basic-offset 4)
 
@@ -43,6 +43,8 @@
   (use-package modern-cpp-font-lock
     :diminish
     :init (modern-c++-font-lock-global-mode t))
+
+  (define-key c++-mode-map (kbd "C-M-\\") 'clang-format-buffer)
 
   (use-package semantic
     :hook ((c++-mode . semantic-mode)

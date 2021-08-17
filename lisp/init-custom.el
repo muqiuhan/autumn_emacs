@@ -127,7 +127,7 @@
                     centaur-package-archives-alist)))
 
 (defcustom centaur-theme-alist
-  '((default . doom-dracula)
+  '((default . doom-xcode)
     (pro     . doom-monokai-pro)
     (dark    . doom-dracula)
     (light   . doom-one-light)
