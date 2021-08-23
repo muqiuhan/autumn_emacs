@@ -55,9 +55,24 @@
           treemacs-missing-project-action  'remove
           treemacs-sorting                 'alphabetic-asc
           treemacs-follow-after-init       t
-          treemacs-width                   30
-          treemacs-position                'right
+          treemacs-width                   50
+          treemacs-position                'left
           treemacs-no-png-images           (not centaur-icon))
+
+    (dolist (face '(treemacs-root-face
+                    treemacs-git-unmodified-face
+                    treemacs-git-modified-face
+                    treemacs-git-renamed-face
+                    treemacs-git-ignored-face
+                    treemacs-git-untracked-face
+                    treemacs-git-added-face
+                    treemacs-git-conflict-face
+                    treemacs-directory-face
+                    treemacs-directory-collapsed-face
+                    treemacs-file-face
+                    treemacs-tags-face))
+      (set-face-attribute face nil :family centaur-font :height 130))
+
 
     :config
     (treemacs-follow-mode t)

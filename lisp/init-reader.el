@@ -270,6 +270,51 @@ browser defined by `browse-url-generic-program'."
                 ("EmacsCast" "https://pinecast.com/feed/emacscast")
                 ("Emacs Reddit" "https://www.reddit.com/r/emacs.rss"))))
 
+;; Translate
+(define-minor-mode bing-dict-auto-sentence-eldoc-mode
+  "使用bing-dict自动翻译光标所处位置的句子"
+  :lighter " Bing Dict"
+
+  (if bing-dict-auto-sentence-eldoc-mode
+      (progn (setq-local eldoc-documentation-function
+                         #'(lambda ()
+                             (let ((word (sentence-at-point)))
+                               (when word
+                                 (bing-dict-brief word))
+                               nil)))
+             (eldoc-mode +1))
+    (setq-local eldoc-documentation-function #'ignore)
+    (eldoc-mode -1)))
+
+(define-minor-mode bing-dict-auto-word-eldoc-mode
+  "使用bing-dict自动翻译光标所处位置的单词"
+  :lighter " Bing Dict"
+
+  (if bing-dict-auto-word-eldoc-mode
+      (progn (setq-local eldoc-documentation-function
+                         #'(lambda ()
+                             (let ((word (sentence-at-point)))
+                               (when word
+                                 (bing-dict-brief word))
+                               nil)))
+             (eldoc-mode +1))
+    (setq-local eldoc-documentation-function #'ignore)
+    (eldoc-mode -1)))
+
+(defun bing-dict ()
+  "使用bing-dict翻译所选区域的字符串"
+  (interactive)
+  (let ((str (if mark-active
+                 (let ((selection (buffer-substring-no-properties
+                                   (region-beginning) (region-end))))
+                   (if (= (length selection) 0)
+                       (message "empty string")
+                     selection))
+               (error "mark not active"))))
+    (bing-dict-brief str)))
+
+(global-set-key (kbd "C-x y") 'bing-dict)
+
 (provide 'init-reader)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

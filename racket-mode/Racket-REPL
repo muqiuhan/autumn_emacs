@@ -120,3 +120,16 @@ empty
       [else (cons (wage (car alon)) (hours->wages (cdr alon)))]))
 (define (wage h)
     (* 12 h))
+(define (f n)
+    (define (f-iter a b c n)
+      (cond [(= n 2) c]
+            [(= n 1) b]
+            [(= n 0) a]
+            [else (f-iter (+ c (* 2 b) (* 3 a))
+                          c
+                          b
+                          (- n 1))]))
+    (f-iter 0 1 2 n))
+      
+(f 10)
+(displayln "\u4f18\u79c0")

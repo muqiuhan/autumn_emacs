@@ -1,0 +1,191 @@
+;;; custom.el --- user customization file    -*- lexical-binding: t no-byte-compile: t -*-
+;;; Commentary:
+;;;       Add or change the configurations in custom.el, then restart Emacs.
+;;;       Put your own configurations in custom-post.el to override default configurations.
+;;; Code:
+
+;; (setq centaur-logo nil)                        ; Logo file or nil (official logo)
+;; (setq centaur-full-name "MuqiuHan")            ; User full name
+;; (setq centaur-mail-address "muqiu-han@outlook.com")   ; Email address
+;; (setq centaur-proxy "127.0.0.1:1087")          ; HTTP/HTTPS proxy
+;; (setq centaur-socks-proxy "127.0.0.1:1086")    ; SOCKS proxy
+(setq centaur-server nil)                         ; Enable `server-mode' or not: t or nil
+;; (setq centaur-icon nil)                        ; Display icons or not: t or nil
+(setq centaur-package-archives 'netease)          ; Package repo: melpa, emacs-china, netease, ustc, tencent or tuna
+;; (setq centaur-theme 'auto)                     ; Color theme: auto, random, system, default, pro, dark, light, warm, cold, day or night
+;; (setq centaur-completion-style 'minibuffer)    ; Completion display style: minibuffer or childframe
+;; (setq centaur-dashboard nil)                   ; Use dashboard at startup or not: t or nil
+;; (setq centaur-restore-frame-geometry nil)      ; Restore the frame's geometry at startup: t or nil
+;; (setq centaur-lsp 'eglot)                      ; Set LSP client: lsp-mode, eglot or nil
+;; (setq centaur-lsp-format-on-save-ignore-modes '(c-mode c++-mode)) ; Ignore format on save for some languages
+;; (setq centaur-chinese-calendar t)              ; Use Chinese calendar or not: t or nil
+(setq centaur-prettify-symbols-alist nil)         ; Alist of symbol prettifications. Nil to use font supports ligatures.
+(setq autumn-cursor-type nil)                     ; cursor types
+(setq autumn-multi-cursors t)                     ; Whether to open the multi-cursor
+(setq autumn-clipboard t)                         ; Open clipboard isolation
+(setq autumn-top-modeline t)                        ; Move the doom-modeline to top
+;; (setq centaur-prettify-org-symbols-alist nil)  ; Alist of symbol prettifications for `org-mode'
+
+;; For Emacs devel
+;; (setq package-user-dir (locate-user-emacs-file (format "elpa-%s" emacs-major-version)))
+;; (setq desktop-base-file-name (format ".emacs-%s.desktop" emacs-major-version))
+;; (setq desktop-base-lock-name (format ".emacs-%s.desktop.lock" emacs-major-version))
+
+;; Fonts
+(when (display-graphic-p)
+  ;; Set default font
+  (cl-loop for font in '("Sarasa Mono Slab K" "SF Mono" "Hack" "JetBrains Mono" "Source Code Pro" "Fira Code"
+                         "Menlo" "Monaco" "DejaVu Sans Mono" "Consolas")
+           when (font-installed-p font)
+           return (set-face-attribute 'default nil
+                                      :font font
+                                      :height (cond (sys/mac-x-p 130)
+                                                    (sys/win32p 110)
+                                                    (t 135))))
+
+  ;; Specify font for all unicode characters
+  (cl-loop for font in '("Apple Color Emoji" "Segoe UI Symbol" "Symbola" "Symbol")
+           when (font-installed-p font)
+           return(set-fontset-font t 'unicode font nil 'prepend))
+
+  ;; Specify font for Chinese characters
+  (cl-loop for font in '("WenQuanYi Micro Hei" "Microsoft Yahei")
+           when (font-installed-p font)
+           return (set-fontset-font t '(#x4e00 . #x9fff) font)))
+
+;; Mail
+;;(setq message-send-mail-function 'smtpmail-send-it
+;;      smtpmail-starttls-credentials '(("smtp.office365.com" 587 nil nil))
+;;      smtpmail-auth-credentials '(("smtp.office365.com" 587
+;;                                   user-mail-address nil))
+;;      smtpmail-default-smtp-server "smtp.office365.com"
+;;      smtpmail-smtp-server "smtp.office365.com"
+;;      smtpmail-smtp-service 587)
+;;
+;; Calendar
+;; Set location , then press `S' can show the time of sunrise and sunset
+;; (setq calendar-location-name "Xinyu"
+;;calendar-latitude 27.81
+;;calendar-longitude 114.92)
+
+;; Misc.
+;; (setq confirm-kill-emacs 'y-or-n-p)
+
+;; Enable proxy
+;; (proxy-http-enable)
+;; (proxy-socks-enable)
+
+;; Display on the specified monitor
+;; (when (and (> (length (display-monitor-attributes-list)) 1)
+;;            (> (display-pixel-width) 1920))
+;;   (set-frame-parameter nil 'left 1920))
+
+(when autumn-modeline-top t
+      (setq-default header-line-format mode-line-format)
+      (setq-default mode-line-format nil))
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#282a36" "#ff5555" "#50fa7b" "#f1fa8c" "#61bfff" "#ff79c6" "#8be9fd" "#f8f8f2"])
+ '(centaur-package-archives 'netease)
+ '(centaur-theme 'default)
+ '(custom-safe-themes
+   '("d47f868fd34613bd1fc11721fe055f26fd163426a299d45ce69bef1f109e1e71" "266ecb1511fa3513ed7992e6cd461756a895dcc5fef2d378f165fed1c894a78c" "8621edcbfcf57e760b44950bb1787a444e03992cb5a32d0d9aec212ea1cd5234" "b186688fbec5e00ee8683b9f2588523abdf2db40562839b2c5458fcfb322c8a4" "1f1b545575c81b967879a5dddc878783e6ebcca764e4916a270f9474215289e5" "3d54650e34fa27561eb81fc3ceed504970cc553cfd37f46e8a80ec32254a3ec3" "1704976a1797342a1b4ea7a75bdbb3be1569f4619134341bd5a4c1cfb16abad4" "c2aeb1bd4aa80f1e4f95746bda040aafb78b1808de07d340007ba898efa484f5" "b5803dfb0e4b6b71f309606587dd88651efe0972a5be16ece6a958b197caeed8" "e8df30cd7fb42e56a4efc585540a2e63b0c6eeb9f4dc053373e05d774332fc13" "4b6b6b0a44a40f3586f0f641c25340718c7c626cbf163a78b5a399fbe0226659" "f91395598d4cb3e2ae6a2db8527ceb83fed79dbaf007f435de3e91e5bda485fb" "8d7b028e7b7843ae00498f68fad28f3c6258eda0650fe7e17bfb017d51d0e2a2" "6c531d6c3dbc344045af7829a3a20a09929e6c41d7a7278963f7d3215139f6a7" "cbdf8c2e1b2b5c15b34ddb5063f1b21514c7169ff20e081d39cf57ffee89bc1e" "97db542a8a1731ef44b60bc97406c1eb7ed4528b0d7296997cbb53969df852d6" "a82ab9f1308b4e10684815b08c9cac6b07d5ccb12491f44a942d845b406b0296" "0b3aee906629ac7c3bd994914bf252cf92f7a8b0baa6d94cb4dfacbd4068391d" "da53441eb1a2a6c50217ee685a850c259e9974a8fa60e899d393040b4b8cc922" "47db50ff66e35d3a440485357fb6acb767c100e135ccdf459060407f8baea7b2" "5f19cb23200e0ac301d42b880641128833067d341d22344806cdad48e6ec62f6" "d6844d1e698d76ef048a53cefe713dbbe3af43a1362de81cdd3aefa3711eae0d" "846b3dc12d774794861d81d7d2dcdb9645f82423565bfb4dad01204fa322dbd5" "e2c926ced58e48afc87f4415af9b7f7b58e62ec792659fcb626e8cba674d2065" "c5ded9320a346146bbc2ead692f0c63be512747963257f18cc8518c5254b7bf5" "1d44ec8ec6ec6e6be32f2f73edf398620bb721afeed50f75df6b12ccff0fbb15" "9b54ba84f245a59af31f90bc78ed1240fca2f5a93f667ed54bbf6c6d71f664ac" "a0be7a38e2de974d1598cf247f607d5c1841dbcef1ccd97cded8bea95a7c7639" "4b0e826f58b39e2ce2829fab8ca999bcdc076dec35187bf4e9a4b938cb5771dc" "a6e620c9decbea9cac46ea47541b31b3e20804a4646ca6da4cce105ee03e8d0e" "333958c446e920f5c350c4b4016908c130c3b46d590af91e1e7e2a0611f1e8c5" "a9a67b318b7417adbedaab02f05fa679973e9718d9d26075c6235b1f0db703c8" "7a7b1d475b42c1a0b61f3b1d1225dd249ffa1abb1b7f726aec59ac7ca3bf4dae" "7eea50883f10e5c6ad6f81e153c640b3a288cd8dc1d26e4696f7d40f754cc703" "da186cce19b5aed3f6a2316845583dbee76aea9255ea0da857d1c058ff003546" "22a514f7051c7eac7f07112a217772f704531b136f00e2ccfaa2e2a456558d39" "1d5e33500bc9548f800f9e248b57d1b2a9ecde79cb40c0b1398dec51ee820daf" "234dbb732ef054b109a9e5ee5b499632c63cc24f7c2383a849815dacc1727cb6" "8146edab0de2007a99a2361041015331af706e7907de9d6a330a3493a541e5a6" "0d01e1e300fcafa34ba35d5cf0a21b3b23bc4053d388e352ae6a901994597ab1" "6c98bc9f39e8f8fd6da5b9c74a624cbb3782b4be8abae8fd84cbc43053d7c175" default))
+ '(exwm-floating-border-color "#242530")
+ '(fci-rule-color "#6272a4")
+ '(flycheck-gcc-language-standard "c++20")
+ '(highlight-tail-colors
+   ((("#2c3e3c" "#2a3b2e" "green")
+     . 0)
+    (("#313d49" "#2f3a3b" "brightcyan")
+     . 20)))
+ '(jdee-db-active-breakpoint-face-colors (cons "#1E2029" "#bd93f9"))
+ '(jdee-db-requested-breakpoint-face-colors (cons "#1E2029" "#50fa7b"))
+ '(jdee-db-spec-breakpoint-face-colors (cons "#1E2029" "#565761"))
+ '(objed-cursor-color "#ff5555")
+ '(pdf-view-midnight-colors (cons "#f8f8f2" "#282a36") t)
+ '(rustic-ansi-faces
+   ["#282a36" "#ff5555" "#50fa7b" "#f1fa8c" "#61bfff" "#ff79c6" "#8be9fd" "#f8f8f2"])
+ '(vc-annotate-background "#282a36")
+ '(vc-annotate-color-map
+   (list
+    (cons 20 "#50fa7b")
+    (cons 40 "#85fa80")
+    (cons 60 "#bbf986")
+    (cons 80 "#f1fa8c")
+    (cons 100 "#f5e381")
+    (cons 120 "#face76")
+    (cons 140 "#ffb86c")
+    (cons 160 "#ffa38a")
+    (cons 180 "#ff8ea8")
+    (cons 200 "#ff79c6")
+    (cons 220 "#ff6da0")
+    (cons 240 "#ff617a")
+    (cons 260 "#ff5555")
+    (cons 280 "#d45558")
+    (cons 300 "#aa565a")
+    (cons 320 "#80565d")
+    (cons 340 "#6272a4")
+    (cons 360 "#6272a4")))
+ '(vc-annotate-very-old-color nil))
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(aw-leading-char-face ((t (:inherit font-lock-keyword-face :bold t :height 2.0))))
+ '(aw-minibuffer-leading-char-face ((t (:inherit font-lock-keyword-face :bold t :height 1.0))))
+ '(aw-mode-line-face ((t (:inherit mode-line-emphasis :bold t))))
+ '(dashboard-heading ((t (:inherit (font-lock-string-face bold)))))
+ '(diff-hl-change ((t (:foreground "#bd93f9" :background nil))))
+ '(diff-hl-delete ((t (:inherit diff-removed :background nil))))
+ '(diff-hl-insert ((t (:inherit diff-added :background nil))))
+ '(doom-modeline-buffer-file ((t (:inherit (mode-line bold)))))
+ '(flycheck-posframe-background-face ((t (:inherit tooltip))))
+ '(flycheck-posframe-border-face ((t (:inherit font-lock-comment-face))))
+ '(flycheck-posframe-face ((t (:foreground "#50fa7b"))))
+ '(flycheck-posframe-info-face ((t (:foreground "#50fa7b"))))
+ '(git-timemachine-minibuffer-author-face ((t (:inherit success))))
+ '(git-timemachine-minibuffer-detail-face ((t (:inherit warning))))
+ '(ivy-minibuffer-match-face-1 ((t (:foreground "#8995ba"))))
+ '(ivy-posframe ((t (:inherit tooltip))))
+ '(ivy-posframe-border ((t (:background "#6272a4"))))
+ '(lsp-headerline-breadcrumb-path-error-face ((t :underline (:style wave :color "#ff5555") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-path-hint-face ((t :underline (:style wave :color "#50fa7b") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-path-info-face ((t :underline (:style wave :color "#50fa7b") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-path-warning-face ((t :underline (:style wave :color "#f1fa8c") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-symbols-error-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#ff5555"))))
+ '(lsp-headerline-breadcrumb-symbols-hint-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#50fa7b"))))
+ '(lsp-headerline-breadcrumb-symbols-info-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#50fa7b"))))
+ '(lsp-headerline-breadcrumb-symbols-warning-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#f1fa8c"))))
+ '(lsp-ui-sideline-code-action ((t (:inherit warning))))
+ '(macrostep-expansion-highlight-face ((t (:inherit tooltip :extend t))))
+ '(org-ellipsis ((t (:foreground nil))))
+ '(org-pomodoro-mode-line ((t (:inherit warning))))
+ '(org-pomodoro-mode-line-break ((t (:inherit success))))
+ '(org-pomodoro-mode-line-overtime ((t (:inherit error))))
+ '(pulse-highlight-face ((t (:inherit region))))
+ '(pulse-highlight-start-face ((t (:inherit region))))
+ '(symbol-overlay-default-face ((t (:inherit (region bold)))))
+ '(transient-posframe ((t (:inherit tooltip))))
+ '(transient-posframe-border ((t (:background "#6272a4"))))
+ '(which-key-posframe ((t (:inherit tooltip))))
+ '(which-key-posframe-border ((t (:background "#6272a4"))))
+ '(ztreep-arrow-face ((t (:inherit font-lock-comment-face))))
+ '(ztreep-diff-header-face ((t (:inherit (diff-header bold)))))
+ '(ztreep-diff-header-small-face ((t (:inherit diff-file-header))))
+ '(ztreep-diff-model-add-face ((t (:inherit diff-nonexistent))))
+ '(ztreep-diff-model-diff-face ((t (:inherit diff-removed))))
+ '(ztreep-diff-model-ignored-face ((t (:inherit font-lock-doc-face :strike-through t))))
+ '(ztreep-diff-model-normal-face ((t (:inherit font-lock-doc-face))))
+ '(ztreep-expand-sign-face ((t (:inherit font-lock-function-name-face))))
+ '(ztreep-header-face ((t (:inherit diff-header))))
+ '(ztreep-leaf-face ((t (:inherit diff-index))))
+ '(ztreep-node-face ((t (:inherit font-lock-variable-name-face)))))
+
+;;; custom.el ends here

@@ -47,6 +47,9 @@
               ;; Only check while saving and opening files
               flycheck-check-syntax-automatically '(save mode-enabled))
   :config
+  (setq-default flycheck-clang-language-standard "c++20"
+                flycheck-gcc-language-standard "c++20")
+
   ;; Prettify indication styles
   (when (fboundp 'define-fringe-bitmap)
     (define-fringe-bitmap 'flycheck-fringe-bitmap-arrow

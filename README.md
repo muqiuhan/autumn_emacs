@@ -1,3 +1,17 @@
+# AutumnEmacs
+
+[logo](./demo.jpeg)
+
+## 更新信息:
++ 删除nyan-mode
++ 更改doom-modeline为powerline
++ bing-dict
++ racket配置
+
+---
+
+这是Fork的CentaurEmacs的配置，以下为CentaurEmacs的README
+
 # Centaur Emacs
 
 [![Build Status](https://github.com/seagle0128/.emacs.d/workflows/CI/badge.svg?branch=master)](https://github.com/seagle0128/.emacs.d/actions)

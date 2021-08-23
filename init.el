@@ -75,7 +75,7 @@
 (add-hook 'emacs-startup-hook
           (lambda ()
             "Recover GC values after startup."
-            (setq gc-cons-threshold 800000
+            (setq gc-cons-threshold 1000000
                   gc-cons-percentage 0.1)))
 
 ;; Load path
@@ -94,6 +94,7 @@
 (advice-add #'package-initialize :after #'add-subdirs-to-load-path)
 
 (update-load-path)
+
 
 ;; Packages
 ;; Without this comment Emacs25 adds (package-initialize) here

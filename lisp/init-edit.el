@@ -263,18 +263,17 @@
   :bind ("C-=" . er/expand-region))
 
 ;; Multiple cursors
-(when centaur-multi-cursors
-  (use-package multiple-cursors
-    :bind (("C-S-c C-S-c"   . mc/edit-lines)
-           ("C->"           . mc/mark-next-like-this)
-           ("C-<"           . mc/mark-previous-like-this)
-           ("C-c C-<"       . mc/mark-all-like-this)
-           ("C-M->"         . mc/skip-to-next-like-this)
-           ("C-M-<"         . mc/skip-to-previous-like-this)
-           ("s-<mouse-1>"   . mc/add-cursor-on-click)
-           ("C-S-<mouse-1>" . mc/add-cursor-on-click)
-           :map mc/keymap
-           ("C-|" . mc/vertical-align-with-space))))
+(use-package multiple-cursors
+  :bind (("C-S-c C-S-c"   . mc/edit-lines)
+         ("C->"           . mc/mark-next-like-this)
+         ("C-<"           . mc/mark-previous-like-this)
+         ("C-c C-<"       . mc/mark-all-like-this)
+         ("C-M->"         . mc/skip-to-next-like-this)
+         ("C-M-<"         . mc/skip-to-previous-like-this)
+         ("s-<mouse-1>"   . mc/add-cursor-on-click)
+         ("C-S-<mouse-1>" . mc/add-cursor-on-click)
+         :map mc/keymap
+         ("C-|" . mc/vertical-align-with-space)))
 
 ;; Smartly select region, rectangle, multi cursors
 (use-package smart-region
@@ -397,11 +396,8 @@
   :diminish
   :hook (after-init . fancy-narrow-mode))
 
-;; cursor type
-(when centaur-cursor-type
-  (if (eq centaur-cursor-type 'bar)
-      (setq cursor-type '(bar . centaur-cursor-bar-size))
-    (setq-default cursor-type centaur-cursor-type)))
+;; cursor-type
+(setq-default cursor-type centaur-cursor-type)
 
 (provide 'init-edit)
 

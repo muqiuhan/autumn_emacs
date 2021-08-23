@@ -35,9 +35,8 @@
   :ensure nil
   :bind (:map c-mode-base-map
          ("C-c c" . compile))
-  :hook (c-mode-common . (lambda () (c-set-style "java")))
-  :init
-  (setq-default c-basic-offset 4)
+  :hook ((c-mode-common . (lambda () (c-set-style "java")))
+         (c++-mode . highlight-indent-guides-mode))
 
   :config
   (use-package modern-cpp-font-lock

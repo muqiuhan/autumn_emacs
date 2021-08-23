@@ -47,35 +47,36 @@
        :diminish
        :defines lsp-clients-python-library-directories
        :commands (lsp-enable-which-key-integration
-                  lsp-format-buffer
                   lsp-organize-imports
                   lsp-install-server)
-       :custom-face
-       (lsp-headerline-breadcrumb-path-error-face
-        ((t :underline (:style wave :color ,(face-foreground 'error))
-            :inherit lsp-headerline-breadcrumb-path-face)))
-       (lsp-headerline-breadcrumb-path-warning-face
-        ((t :underline (:style wave :color ,(face-foreground 'warning))
-            :inherit lsp-headerline-breadcrumb-path-face)))
-       (lsp-headerline-breadcrumb-path-info-face
-        ((t :underline (:style wave :color ,(face-foreground 'success))
-            :inherit lsp-headerline-breadcrumb-path-face)))
-       (lsp-headerline-breadcrumb-path-hint-face
-        ((t :underline (:style wave :color ,(face-foreground 'success))
-            :inherit lsp-headerline-breadcrumb-path-face)))
-
-       (lsp-headerline-breadcrumb-symbols-error-face
-        ((t :inherit lsp-headerline-breadcrumb-symbols-face
-            :underline (:style wave :color ,(face-foreground 'error)))))
-       (lsp-headerline-breadcrumb-symbols-warning-face
-        ((t :inherit lsp-headerline-breadcrumb-symbols-face
-            :underline (:style wave :color ,(face-foreground 'warning)))))
-       (lsp-headerline-breadcrumb-symbols-info-face
-        ((t :inherit lsp-headerline-breadcrumb-symbols-face
-            :underline (:style wave :color ,(face-foreground 'success)))))
-       (lsp-headerline-breadcrumb-symbols-hint-face
-        ((t :inherit lsp-headerline-breadcrumb-symbols-face
-            :underline (:style wave :color ,(face-foreground 'success)))))
+       ;; :custom-face
+       ;;(lsp-headerline-breadcrumb-path-error-face
+       ;; ((t :underline (:style wave :color ,(face-foreground 'error))
+       ;;     :inherit lsp-headerline-breadcrumb-path-face)))
+       ;;(lsp-headerline-breadcrumb-path-warning-face
+       ;; ((t :underline (:style wave :color ,(face-foreground 'warning))
+       ;;     :inherit lsp-headerline-breadcrumb-path-face)))
+       ;;(lsp-headerline-breadcrumb-path-info-face
+       ;; ((t :underline (:style wave :color ,(face-foreground 'success))
+       ;;     :inherit lsp-headerline-breadcrumb-path-face)))
+       ;;(lsp-headerline-breadcrumb-path-hint-face
+       ;; ((t :underline (:style wave :color ,(face-foreground 'success))
+       ;;     :inherit lsp-headerline-breadcrumb-path-face)))
+       ;;
+       ;;       (lsp-headerline-breadcrumb-symbols-error-face
+       ;;        ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       ;;            :underline (:style wave :color ,(face-foreground 'error)))))
+       ;;       (lsp-headerline-breadcrumb-symbols-warning-face
+       ;;        ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       ;;            :underline (:style wave :color ,(face-foreground 'warning)))))
+       ;;       (lsp-headerline-breadcrumb-symbols-info-face
+       ;;        ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       ;;            :underline (:style wave :color ,(face-foreground 'success)))))
+       ;;       (lsp-headerline-breadcrumb-symbols-hint-face
+       ;;        ((t :inherit lsp-headerline-breadcrumb-symbols-face
+       ;;            :underline (:style wave :color ,(face-foreground 'success)))))
+       :config
+       (setq lsp-headerline-breadcrumb-enable nil)
 
        :hook ((prog-mode . (lambda ()
                              (unless (derived-mode-p 'emacs-lisp-mode 'lisp-mode)
@@ -94,18 +95,19 @@
               ([remap xref-find-references] . lsp-find-references))
        :init
        ;; @see https://emacs-lsp.github.io/lsp-mode/page/performance
-       (setq read-process-output-max (* 1024 1024)) ;; 1MB
+       (setq read-process-output-max (* 2048 2048))
+       (setq gc-cons-threshold 1000000000)
 
        (setq lsp-keymap-prefix "C-c l"
              lsp-keep-workspace-alive nil
              lsp-signature-auto-activate nil
              lsp-modeline-code-actions-enable nil
              lsp-modeline-diagnostics-enable nil
-             lsp-modeline-workspace-status-enable nil
+             lsp-modeline-workspace-status-enable t
 
              lsp-enable-file-watchers nil
              lsp-enable-folding nil
-             lsp-enable-symbol-highlighting nil
+             lsp-enable-symbol-highlighting t
              lsp-enable-text-document-color nil
 
              lsp-enable-indentation nil
@@ -128,6 +130,7 @@
          (lsp-install-server t)))
 
      (use-package lsp-ui
+       :config
        :custom-face
        (lsp-ui-sideline-code-action ((t (:inherit warning))))
        :pretty-hydra
@@ -188,9 +191,9 @@
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
               ([remap xref-find-references] . lsp-ui-peek-find-references))
        :hook (lsp-mode . lsp-ui-mode)
-       :init (setq lsp-ui-sideline-show-diagnostics nil
+       :init (setq lsp-ui-sideline-show-diagnostics t
                    lsp-ui-sideline-ignore-duplicate t
-                   lsp-ui-doc-position 'at-point
+                   lsp-ui-doc-position 'bottom
                    lsp-ui-doc-border (face-foreground 'font-lock-comment-face nil t)
                    lsp-ui-imenu-colors `(,(face-foreground 'font-lock-keyword-face)
                                          ,(face-foreground 'font-lock-string-face)
@@ -295,6 +298,7 @@
                 ("s-<f8>" . lsp-treemacs-java-deps-list))
          :init (lsp-treemacs-sync-mode 1)
          :config
+
          (with-eval-after-load 'ace-window
            (when (boundp 'aw-ignored-buffers)
              (push 'lsp-treemacs-symbols-mode aw-ignored-buffers)
@@ -543,7 +547,7 @@
                             (upcase ,lang))))))))
 
     (defvar org-babel-lang-list
-      '("go" "python" "ipython" "ruby" "js" "css" "sass" "C" "rust" "java"))
+      '("go" "python" "ipython" "ruby" "js" "css" "sass" "C" "C++" "rust" "java"))
     (add-to-list 'org-babel-lang-list (if emacs/>=26p "shell" "sh"))
     (dolist (lang org-babel-lang-list)
       (eval `(lsp-org-babel-enable ,lang))))

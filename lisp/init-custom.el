@@ -77,6 +77,11 @@
   :group 'centaur
   :type 'boolean)
 
+(defcustom centaur-cursor-type 'bar
+  "Display icons or not."
+  :group 'centaur
+  :type 'boolean)
+
 ;; Emacs Lisp Package Archive (ELPA)
 ;; @see https://github.com/melpa/melpa and https://elpa.emacs-china.org/.
 (defcustom centaur-package-archives-alist
@@ -127,7 +132,7 @@
                     centaur-package-archives-alist)))
 
 (defcustom centaur-theme-alist
-  '((default . doom-xcode)
+  '((default . doom-miramare)
     (pro     . doom-monokai-pro)
     (dark    . doom-dracula)
     (light   . doom-one-light)
@@ -141,7 +146,7 @@
                 :value-type (symbol :tag "Internal theme")))
 
 (defcustom centaur-auto-themes '(("8:00"  . doom-one-light)
-				                 ("19:00" . doom-one))
+				 ("19:00" . doom-one))
   "List of themes mapped to the time they should be loaded.
 
 The keywords `:sunrise' and `:sunset' can be used for the time
@@ -155,7 +160,7 @@ For example:
 
 (when (boundp 'ns-system-appearance)
   (defcustom centaur-system-themes '((light . doom-one-light)
-				                     (dark  . doom-one))
+				     (dark  . doom-one))
     "List of themes related the system appearance. It's only available on macOS."
     :group 'centaur
     :type '(alist :key-type (symbol :tag "Appearance")
@@ -273,6 +278,8 @@ Nil to use font supports ligatures."
 
 ;; Load `custom-file'
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+
 
 (provide 'init-custom)
 
