@@ -1,6 +1,6 @@
-[demo1.png](./img/demo1.png)
+[demo1.png](./img/demo1.jpg)
 
-[demo2.png](./img/demo2.png)
+[demo2.png](./img/demo2.jpg)
 
 
 AutumnEmacs is a minimalist GNU Emacs configuration, which will pre-configure OCaml, Racket, Clojure, CommonLisp, Scheme, and EmacsLisp development environments for you, including some related productivity plugins.
