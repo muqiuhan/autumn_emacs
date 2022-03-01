@@ -22,3 +22,4 @@
 (load "~/.emacs.d/config/util/window-numbering.el")
 (load "~/.emacs.d/config/util/treemacs.el")
 (load "~/.emacs.d/config/util/company.el")
+(load "~/.emacs.d/config/util/highlight.el")

@@ -4,14 +4,17 @@
 (defconst *mirror-source* 'melpa)
 
 ;; set the default font and font height, nil to use default
-(defconst *default-font* "IBM Plex Mono Medium")
-(defconst *default-font-size* 120)
+(defconst *default-font* "IBM Plex Mono Semibold")
+(defconst *default-font-size* 115)
 
 ;; configure whether to display certain controls.
 (defconst *menu-bar* nil)
 (defconst *tool-bar* nil)
 (defconst *tab-bar* nil)
 (defconst *scroll-bar* nil)
+
+;; backup file directory
+(setq backup-directory-alist '(("." . "~/.backups")))
 
 ;; set the style of modeline, optional values: awesome-tray/doom-modeline/powerline-default/nil,
 ;; where nil means no modline is displayed
