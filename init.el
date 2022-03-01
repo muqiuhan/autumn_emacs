@@ -2,20 +2,23 @@
   '(window-numbering
     treemacs
     company
+    company-prescient
+    yasnippet
+    company-box
+    use-package
+    vterm
     dashboard
-    doom-themes
-    nyan-mode))
+    doom-themes))
 
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/config/config.el")
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(clojure-mode racket-mode rust-mode sml-mode tuareg use-package doom-themes nyan-mode company treemacs window-numbering)))
+   '(company-prescient use-package yasnippet company-box all-the-icons all-the-icons-ivy-rich)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

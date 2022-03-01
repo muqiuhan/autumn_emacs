@@ -1,6 +1,7 @@
 ;; Font
-(if (not (string= *default-font* ""))
-    (set-frame-font *default-font*))
+(set-face-attribute 'default nil
+                    :font *default-font*
+                    :height *default-font-size*)
 
 ;; window
 (when (not *menu-bar*)

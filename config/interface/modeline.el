@@ -4,8 +4,9 @@
    ((eq *mode-line* 'awesome-tray)
     (progn
       (require 'awesome-tray)
-      (setq-default awesome-tray-buffer-name-max-length 50
-		    awesome-tray-file-name-max-length 50
+      (setq-default awesome-tray-buffer-name-max-length 100
+		    awesome-tray-file-name-max-length 100
+		    awesome-tray-mode-line-default-height 1
 		    awesome-tray-refresh-idle-delay 0)
       (add-hook 'after-init-hook 'awesome-tray-mode)))
 
