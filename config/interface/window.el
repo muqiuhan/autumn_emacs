@@ -6,10 +6,6 @@
                                     :font font
                                     :height *default-font-size*))
 
-(set-face-attribute 'default nil
-                    :font *default-font*
-                    :height *default-font-size*)
-
 ;; window
 (when (not *menu-bar*)
   (menu-bar-mode 0))
