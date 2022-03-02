@@ -1,12 +1,4 @@
-(defun childframe-workable-p ()
-  "Test whether childframe is workable."
-  (and (version<= "26.0.50" emacs-version)
-       (not (or noninteractive
-                emacs-basic-display
-                (not (display-graphic-p))))))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; init-funcs.el ends here
+(require 'cl-lib)
 
 ;; Basic settings
 (load "~/.emacs.d/config/package.el")
@@ -23,3 +15,6 @@
 (load "~/.emacs.d/config/util/treemacs.el")
 (load "~/.emacs.d/config/util/company.el")
 (load "~/.emacs.d/config/util/highlight.el")
+
+;; Develop Settings
+(load "~/.emacs.d/config/develop/scheme.el")

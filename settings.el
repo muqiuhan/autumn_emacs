@@ -3,8 +3,11 @@
 ;; Use mirror source, optional tuna/emacs-china/ustc/tencent/melpa
 (defconst *mirror-source* 'melpa)
 
-;; set the default font and font height, nil to use default
-(defconst *default-font* "IBM Plex Mono Semibold")
+;; set the default font-list and font height, nil to use default
+;; the fonts that exist in the system will be select from it.
+(defconst *default-font-list* '("IBM Plex Mono Semibold" "Hack" "SF Mono" "Noto Sans Mono"
+				"JetBrains Mono" "Fira Code" "Cascadia Code" "Menlo" "Consolas"))
+
 (defconst *default-font-size* 115)
 
 ;; configure whether to display certain controls.

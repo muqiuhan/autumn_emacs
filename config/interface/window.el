@@ -1,4 +1,11 @@
 ;; Font
+(cl-loop for font in *default-font-list*
+         when ((lambda (font-name)
+		 (find-font (font-spec :name font-name))) font)
+         return (set-face-attribute 'default nil
+                                    :font font
+                                    :height *default-font-size*))
+
 (set-face-attribute 'default nil
                     :font *default-font*
                     :height *default-font-size*)
