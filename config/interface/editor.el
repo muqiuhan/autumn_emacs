@@ -3,6 +3,8 @@
       (progn
 	(add-hook 'c-mode-hook 'display-line-numbers-mode)
 	(add-hook 'emacs-lisp-mode-hook 'display-line-numbers-mode)
+	(add-hook 'rust-mode-hook 'display-line-numbers-mode)
+	(add-hook 'scheme-mode-hook 'display-line-numbers-mode)
 	(add-hook 'c++-mode-hook 'display-line-numbers-mode)
 	(add-hook 'tuareg-mode-hook 'display-line-numbers-mode)
 	(add-hook 'python-mode-hook 'display-line-numbers-mode)
@@ -15,6 +17,8 @@
       (add-hook 'emacs-lisp-mode-hook 'linum-mode)
       (add-hook 'c++-mode-hook 'linum-mode)
       (add-hook 'tuareg-mode-hook 'linum-mode)
+      (add-hook 'rust-mode-hook 'linum-mode)
+      (add-hook 'scheme-mode-hook 'linum-mode)
       (add-hook 'python-mode-hook 'linum-mode)
       (add-hook 'clojure-mode-hook 'linum-mode)
       (add-hook 'racket-mode-hook 'linum-mode))))

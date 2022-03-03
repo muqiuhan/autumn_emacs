@@ -8,7 +8,10 @@
 
 (defun ocaml-save-file ()
   (interactive)
-  (projectile-run-compilation (concat "cd " (projectile-compilation-dir) "&& dune build"))
+  (projectile-run-compilation
+   (concat "eval $(opam env) && " ;; update opam environment
+	   "cd " (projectile-compilation-dir) " && " ;; cd project root directory
+	   "dune build"))
   (save-buffer))
 
 (add-hook 'tuareg-mode-hook 'lsp)

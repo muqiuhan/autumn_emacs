@@ -18,3 +18,5 @@
 
 ;; Develop Settings
 (load "~/.emacs.d/config/develop/scheme.el")
+(load "~/.emacs.d/config/develop/ocaml.el")
+(load "~/.emacs.d/config/develop/rust.el")

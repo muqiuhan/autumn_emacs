@@ -14,6 +14,7 @@
   (tool-bar-mode 0))
 
 (when (not *tab-bar*)
+  
   (tab-bar-mode 0))
 
 (when (not *scroll-bar*)

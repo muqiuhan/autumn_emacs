@@ -8,12 +8,16 @@
 (defconst *default-font-list* '("IBM Plex Mono Semibold" "Hack" "SF Mono" "Noto Sans Mono"
 				"JetBrains Mono" "Fira Code" "Cascadia Code" "Menlo" "Consolas"))
 
-(defconst *default-font-size* 115)
+(defconst *default-font-size* 105)
 
 ;; configure whether to display certain controls.
 (defconst *menu-bar* nil)
 (defconst *tool-bar* nil)
+
+;; see : https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Bars.html
 (defconst *tab-bar* nil)
+
+
 (defconst *scroll-bar* nil)
 
 ;; backup file directory
