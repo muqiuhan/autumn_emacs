@@ -1,13 +1,9 @@
 (if (not *mode-line*)
-    (setq-default mode-line-format nil)
+    (add-hook 'after-init-hook '(lambda () (setq-default mode-line-format nil)))
   (cond
    ((eq *mode-line* 'awesome-tray)
     (progn
       (require 'awesome-tray)
-      (setq-default awesome-tray-buffer-name-max-length 100
-		    awesome-tray-file-name-max-length 100
-		    awesome-tray-mode-line-default-height 1
-		    awesome-tray-refresh-idle-delay 0)
       (add-hook 'after-init-hook 'awesome-tray-mode)))
 
    ((eq *mode-line* 'powerline)

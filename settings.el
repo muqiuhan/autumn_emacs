@@ -25,7 +25,7 @@
 
 ;; set the style of modeline, optional values: awesome-tray/doom-modeline/powerline-default/nil,
 ;; where nil means no modline is displayed
-(defconst *mode-line* 'powerline)
+(defconst *mode-line* 'nil)
 
 ;; set the border width of the window (fringe-mode)
 ;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fringes.html

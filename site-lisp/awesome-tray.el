@@ -598,7 +598,7 @@ These goes before those shown in their full names."
             )))
 
 (defun awesome-tray-module-date-info ()
-  (format-time-string "%m-%d %H:%M %a"))
+  (format-time-string "%m-%d-%H:%M-%a"))
 
 (defun awesome-tray-module-last-command-info ()
   (format "%s" last-command))
