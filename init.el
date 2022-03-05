@@ -2,6 +2,7 @@
   '(window-numbering
     treemacs
     ocp-indent
+    all-the-icons
     lsp-treemacs
     company
     ocamlformat
