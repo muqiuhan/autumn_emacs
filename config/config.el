@@ -15,6 +15,7 @@
 (load "~/.emacs.d/config/util/treemacs.el")
 (load "~/.emacs.d/config/util/company.el")
 (load "~/.emacs.d/config/util/highlight.el")
+(load "~/.emacs.d/config/util/youdao-dictionary.el")
 
 ;; Develop Settings
 (load "~/.emacs.d/config/develop/scheme.el")

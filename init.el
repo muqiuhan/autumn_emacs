@@ -1,8 +1,10 @@
 (defconst *base-package-list*
   '(window-numbering
+    youdao-dictionary
     treemacs
     ocp-indent
     all-the-icons
+    eglot
     lsp-treemacs
     company
     ocamlformat
@@ -37,7 +39,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(lsp-treemacs ocp-indent ocamlformat rustic magit flycheck projectile dune dune-format tuareg lsp-ui geiser geiser-chez geiser-gambit geiser-guile geiser-mit highlight-indent-guides rainbow-delimiters company-prescient use-package yasnippet company-box all-the-icons all-the-icons-ivy-rich)))
+   '(youdao-dictionary lsp-treemacs ocp-indent ocamlformat rustic magit flycheck projectile dune dune-format tuareg lsp-ui geiser geiser-chez geiser-gambit geiser-guile geiser-mit highlight-indent-guides rainbow-delimiters company-prescient use-package yasnippet company-box all-the-icons all-the-icons-ivy-rich)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -51,3 +53,6 @@
  '(lsp-headerline-breadcrumb-symbols-hint-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#50fa7b"))))
  '(lsp-headerline-breadcrumb-symbols-info-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#50fa7b"))))
  '(lsp-headerline-breadcrumb-symbols-warning-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#f1fa8c")))))
+;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
+(require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
+;; ## end of OPAM user-setup addition for emacs / base ## keep this line

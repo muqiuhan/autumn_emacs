@@ -5,8 +5,9 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("IBM Plex Mono Semibold" "Hack" "SF Mono" "Noto Sans Mono"
-				"JetBrains Mono" "Fira Code" "Cascadia Code" "Menlo" "Consolas"))
+(defconst *default-font-list* '("Input Mono Narrow" "Anonymous Pro" "IBM Plex Mono" 
+				"Fira Code" "Menlo" "Consolas" "SF Mono" "Hack"
+				"JetBrains Mono" "Cascadia Code" "Noto Sans Mono"))
 
 (defconst *default-font-size* 105)
 
@@ -14,9 +15,11 @@
 (defconst *menu-bar* nil)
 (defconst *tool-bar* nil)
 
+;; start window size
+(defconst *start-window* 'max)
+
 ;; see : https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Bars.html
 (defconst *tab-bar* nil)
-
 
 (defconst *scroll-bar* nil)
 
@@ -32,7 +35,7 @@
 (defconst *border-width* 0)
 
 ;; set the theme, nil means use the default theme
-(defconst *theme* 'doom-dracula)
+(defconst *theme* 'modus-operandi)
 
 ;; ==================== Editor Settings ====================
 
@@ -49,3 +52,11 @@
 
 ;; enable global-company-mode
 (defconst *company* t)
+
+;; youdao dictionary
+(defconst *youdao-dictionary-key* "C-c y")
+
+;; Translation result display scheme, optional postframe, tootip, popup-tip
+(defconst *youdao-dictionary-result-display-scheme* 'postframe)
+
+;; ==================== Develop Settings ====================
