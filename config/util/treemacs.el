@@ -9,3 +9,5 @@
 	      treemacs-no-png-images           nil)
 
 (global-set-key (kbd "C-x t t ") 'treemacs)
+
+

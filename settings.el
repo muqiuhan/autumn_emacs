@@ -5,11 +5,11 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Cascadia Code" "Input Mono Narrow" "Anonymous Pro" "IBM Plex Mono" 
+(defconst *default-font-list* '("Cascadia Code" "Input Mono Narrow" "Anonymous Pro"
 				"Fira Code" "Menlo" "Consolas" "SF Mono" "Hack"
-				"JetBrains Mono" "Noto Sans Mono"))
+				"JetBrains Mono" "Noto Sans Mono" "IBM Plex Mono"))
 
-(defconst *default-font-size* 125)
+(defconst *default-font-size* 115)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* t)
@@ -41,7 +41,7 @@
 (defconst *day-theme* 'modus-operandi)
 (defconst *night-theme* 'modus-vivendi)
 (defconst *sunset-time* 18)
-(defconst *theme* 'doom-dracula) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'modus-operandi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -54,6 +54,10 @@
 ;; t is on, nil is off.
 (defconst *hi-line* t)
 
+;; Set smooth scrolling, which will set the number of rows to scroll at a time to 1,
+;; and still scroll faster by holding down shift and scrolling
+(defconst *smooth-scroll* t)
+
 ;; ==================== Util Settings ====================
 
 ;; enable global-company-mode
@@ -64,5 +68,8 @@
 
 ;; Translation result display scheme, optional postframe, tootip, popup-tip
 (defconst *youdao-dictionary-result-display-scheme* 'postframe)
+
+;; How flycheck is displayed (pos-tip / posframe / popup-tip)
+(defconst *flycheck-show-mode* 'pos-tip)
 
 ;; ==================== Develop Settings ====================

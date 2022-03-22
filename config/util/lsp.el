@@ -178,9 +178,9 @@
              ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
              ([remap xref-find-references] . lsp-ui-peek-find-references))
       :hook (lsp-mode . lsp-ui-mode)
-      :init (setq lsp-ui-sideline-show-diagnostics nil
+      :init (setq lsp-ui-sideline-show-diagnostics t
                   lsp-ui-sideline-ignore-duplicate t
-                  lsp-ui-doc-delay 0.1
+                  lsp-ui-doc-delay 0.5
                   lsp-ui-doc-border (face-foreground 'font-lock-comment-face nil t)
                   lsp-ui-imenu-colors `(,(face-foreground 'font-lock-keyword-face)
 					,(face-foreground 'font-lock-string-face)
@@ -564,3 +564,5 @@
 (add-to-list 'org-babel-lang-list (if emacs/>=26p "shell" "sh"))
 (dolist (lang org-babel-lang-list)
   (eval `(lsp-org-babel-enable ,lang)))
+
+
