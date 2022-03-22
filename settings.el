@@ -5,11 +5,14 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Input Mono Narrow" "Anonymous Pro" "IBM Plex Mono" 
+(defconst *default-font-list* '("Cascadia Code" "Input Mono Narrow" "Anonymous Pro" "IBM Plex Mono" 
 				"Fira Code" "Menlo" "Consolas" "SF Mono" "Hack"
-				"JetBrains Mono" "Cascadia Code" "Noto Sans Mono"))
+				"JetBrains Mono" "Noto Sans Mono"))
 
-(defconst *default-font-size* 105)
+(defconst *default-font-size* 125)
+
+;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
+(defconst *font-ligature* t)
 
 ;; configure whether to display certain controls.
 (defconst *menu-bar* nil)
@@ -34,8 +37,11 @@
 ;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fringes.html
 (defconst *border-width* 0)
 
-;; set the theme, nil means use the default theme
-(defconst *theme* 'modus-operandi)
+;; set the theme, Themes will be automatically selected based on time.
+(defconst *day-theme* 'modus-operandi)
+(defconst *night-theme* 'modus-vivendi)
+(defconst *sunset-time* 18)
+(defconst *theme* 'doom-dracula) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 

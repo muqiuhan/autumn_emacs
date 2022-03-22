@@ -1,4 +1,5 @@
 (require 'treemacs-mode)
+(require 'vscode-icon)
 
 (setq-default treemacs-missing-project-action  'remove
 	      treemacs-sorting                 'alphabetic-asc
