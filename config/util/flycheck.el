@@ -53,7 +53,9 @@
 (cond
    ((eq *flycheck-show-mode* 'pos-tip)
     (use-package flycheck-pos-tip
-      :hook (flycheck-mode . flycheck-pos-tip-mode)))
+      :hook (flycheck-mode . flycheck-pos-tip-mode)
+      :config
+      (setq-default flycheck-pos-tip-timeout 60)))
    
    ((eq *flycheck-show-mode* 'posframe)
     ;; Display Flycheck errors

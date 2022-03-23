@@ -5,11 +5,11 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Cascadia Code" "Input Mono Narrow" "Anonymous Pro"
-				"Fira Code" "Menlo" "Consolas" "SF Mono" "Hack"
-				"JetBrains Mono" "Noto Sans Mono" "IBM Plex Mono"))
+(defconst *default-font-list* '("Cascadia Code" "SF Mono" "Input Mono" 
+				"Fira Code" "Menlo" "Consolas" "Hack" "Noto Sans Mono"
+				"JetBrains Mono"  "IBM Plex Mono" "Anonymous Pro"))
 
-(defconst *default-font-size* 115)
+(defconst *default-font-size* 120)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* t)
@@ -29,7 +29,7 @@
 ;; backup file directory
 (setq backup-directory-alist '(("." . "~/.backups")))
 
-;; set the style of modeline, optional values: awesome-tray/doom-modeline/powerline-default/nil,
+;; set the style of modeline, optional values: awesome-tray/doom-modeline/powerline/default/nil,
 ;; where nil means no modline is displayed
 (defconst *mode-line* 'nil)
 
@@ -41,7 +41,7 @@
 (defconst *day-theme* 'modus-operandi)
 (defconst *night-theme* 'modus-vivendi)
 (defconst *sunset-time* 18)
-(defconst *theme* 'modus-operandi) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -58,6 +58,9 @@
 ;; and still scroll faster by holding down shift and scrolling
 (defconst *smooth-scroll* t)
 
+;; Whether to enable multi-cursor editing
+(defconst *multiple-cursors* t)
+
 ;; ==================== Util Settings ====================
 
 ;; enable global-company-mode
@@ -73,3 +76,11 @@
 (defconst *flycheck-show-mode* 'pos-tip)
 
 ;; ==================== Develop Settings ====================
+
+;; Choose whether to enable environments for certain programming languages based on switches
+
+(defconst *ocaml* t)
+(defconst *common-lisp* t)
+(defconst *scheme* t)
+(defconst *cpp* t)
+(defconst *rust* t)

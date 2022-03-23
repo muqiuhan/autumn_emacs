@@ -27,5 +27,5 @@
   (global-hl-line-mode +1))
 
 (when *smooth-scroll*
-  (setq mouse-wheel-scroll-amount '(2 ((shift) . 4) ((control) . nil)))
+  (setq mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control) . nil)))
   (setq mouse-wheel-progressive-speed nil))

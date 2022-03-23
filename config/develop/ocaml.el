@@ -35,6 +35,7 @@
 (provide 'opam-user-setup)
 
 ;; Base configuration for OPAM
+
 (defun opam-shell-command-to-string (command)
   "Similar to shell-command-to-string, but returns nil unless the process
   returned 0, and ignores stderr (shell-command-to-string ignores return value)"
@@ -152,11 +153,12 @@
 
 (opam-auto-tools-setup)
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line
-
-(add-hook 'tuareg-mode-hook 'lsp)
-(add-hook 'tuareg-mode-hook 'projectile-mode)
-(add-hook 'tuareg-mode-hook 'flycheck-mode)
-
-(define-key tuareg-mode-map (kbd "C-x x b") 'dune-build)
-(define-key tuareg-mode-map (kbd "C-x x t") 'dune-test)
-(define-key tuareg-mode-map (kbd "C-x x c") 'dune-clean)
+;; ## added by OPAM user-setup for emacs / ocp-indent ## 59c53540307c9f6c33d99c2dcb24ded3 ## you can edit, but keep this line
+;; Load ocp-indent from its original switch when not found in current switch
+(when (not (assoc "ocp-indent" opam-tools-installed))
+  (autoload 'ocp-setup-indent "/home/muqiu-han/.opam/default/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Tuareg mode")
+  (autoload 'ocp-indent-caml-mode-setup "/home/muqiu-han/.opam/default/share/emacs/site-lisp/ocp-indent.el" "Improved indentation for Caml mode")
+  (add-hook 'tuareg-mode-hook 'ocp-setup-indent t)
+  (add-hook 'caml-mode-hook 'ocp-indent-caml-mode-setup  t)
+  (setq ocp-indent-path "/home/muqiu-han/.opam/default/bin/ocp-indent"))
+;; ## end of OPAM user-setup addition for emacs / ocp-indent ## keep this line

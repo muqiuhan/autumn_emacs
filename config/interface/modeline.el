@@ -9,7 +9,7 @@
    ((eq *mode-line* 'powerline)
     (progn
       (require-package 'powerline)
-      (powerline-default-theme)))
+      (powerline-center-theme)))
 
    ((eq *mode-line* 'doom-modeline)
     (progn
