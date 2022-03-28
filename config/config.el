@@ -13,6 +13,7 @@
 (load "~/.emacs.d/config/util/emacs-trans.el")
 (load "~/.emacs.d/config/util/company.el")
 (load "~/.emacs.d/config/util/awesome-pair.el")
+(load "~/.emacs.d/config/util/org.el")
 (load "~/.emacs.d/config/util/highlight.el")
 (load "~/.emacs.d/config/util/which-key.el")
 (load "~/.emacs.d/config/util/youdao-dictionary.el")
@@ -24,3 +25,4 @@
 (load "~/.emacs.d/config/develop/common-lisp.el")
 (load "~/.emacs.d/config/develop/python.el")
 (load "~/.emacs.d/config/develop/hy.el")
+(load "~/.emacs.d/config/develop/racket.el")

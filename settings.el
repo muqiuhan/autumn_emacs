@@ -3,13 +3,20 @@
 ;; Use mirror source, optional tuna/emacs-china/ustc/tencent/melpa
 (defconst *mirror-source* 'melpa)
 
+;; Use proxy
+(when nil
+  (setq-default url-proxy-services
+		'(("no_proxy" . "^\\(localhost\\|10\\..*\\|192\\.168\\..*\\)")
+		  ("http" . "127.0.0.1:7890")
+		  ("https" . "127.0.0.1:7890"))))
+
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Cascadia Code" "SF Mono" "Input Mono" 
-				"Fira Code" "Menlo" "Consolas" "Hack" "Noto Sans Mono"
+(defconst *default-font-list* '("Monego" "Monaco" "Menlo" "Noto Sans Mono" "Cascadia Code"
+				"Fira Code" "Consolas" "Hack" "Input Mono" "SF Mono"
 				"JetBrains Mono"  "IBM Plex Mono" "Anonymous Pro"))
 
-(defconst *default-font-size* 120)
+(defconst *default-font-size* 115)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* t)
@@ -40,8 +47,8 @@
 ;; set the theme, Themes will be automatically selected based on time.
 (defconst *day-theme* 'modus-operandi)
 (defconst *night-theme* 'modus-vivendi)
-(defconst *sunset-time* 18)
-(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
+(defconst *sunset-time* 17)
+(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 

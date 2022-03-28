@@ -2,6 +2,7 @@
 (require 'projectile)
 (require 'flycheck)
 (require 'ocp-indent)
+(require 'ocamlformat)
 
 (defun ocaml-file-has-errors? ()
   (flycheck-list-errors)
@@ -30,6 +31,10 @@
    (concat (update-opam-env)
 	   " cd " (projectile-compilation-dir) " && "
 	   "dune test")))
+
+(define-key tuareg-mode-map (kbd "C-x x b") (lambda () (interactive) (dune-build)))
+(define-key tuareg-mode-map (kbd "C-x x t") (lambda () (interactive) (dune-test)))
+(define-key tuareg-mode-map (kbd "C-x x c") (lambda () (interactive) (dune-clean)))
 
 ;; ## added by OPAM user-setup for emacs / base ## cfd3c9b7837c85cffd0c59de521990f0 ## you can edit, but keep this line
 (provide 'opam-user-setup)
