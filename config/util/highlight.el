@@ -4,7 +4,7 @@
 (setq-default highlight-indent-guides-delay 0
 	      highlight-indent-guides-character 9474
 	      highlight-indent-guides-responsive 'top
-	      highlight-indent-guides-method 'character)
+	      highlight-indent-guides-method 'bitmap)
 
 (add-hook 'c++-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'c-mode-hook 'rainbow-delimiters-mode)
@@ -25,5 +25,3 @@
 (add-hook 'python-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'clojure-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'tuareg-mode-hook 'highlight-indent-guides-mode)
-
-

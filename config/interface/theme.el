@@ -10,5 +10,3 @@
 (use-package vscode-icon
   :ensure t
   :commands (vscode-icon-for-file))
-
-(setq-default cursor-type 'bar)

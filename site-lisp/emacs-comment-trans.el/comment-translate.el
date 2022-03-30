@@ -33,16 +33,16 @@
 (require 'cl-lib)
 
 (defvar target-language nil
-  "The target target language")
+  "The target target language.")
 
 (defvar source-language nil
-  "The target source language")
+  "The target source language.")
 
 (defvar translate-shell-path "/usr/bin/trans"
-  "The translate-shell exec path")
+  "The translate-shell exec path.")
 
 (defvar comment-translate-selected-color "red"
-  "Selected text color")
+  "Selected text color.")
 
 (defvar default-translate-languages '(("zh" "en")
                                       ("en" "zh"))
@@ -73,7 +73,7 @@
 
 ;; call-translate-app : str -> str
 (defun call-translate-app (command-string)
-  "@brief Call the command-string through an external program and return two values,
+  "@brief Call the command-string through an external program and return two values.
     which are the return value of the translation program and the return code of the translation program.
    @parameters command-string The command that needs to be called."
   (if (file-exists-p translate-shell-path)
