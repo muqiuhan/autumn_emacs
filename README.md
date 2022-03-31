@@ -7,9 +7,7 @@ AutumnEmacs is a minimalist GNU Emacs configuration, which will pre-configure OC
 
 ---
 
-note that:
-- this project uses the vterm pluigin, so cmake must be installed
-- this project uses the all-the-icons font, so you must install this font, I provide these font files in the site-lisp directory.
+note that: You first need to write settings.el to customize your configuration
 
 ---
 

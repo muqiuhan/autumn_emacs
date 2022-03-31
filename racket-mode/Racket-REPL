@@ -1,3 +1,8 @@
 (define env1 (cons 'a 'b env0))
 (r2 '(+ 1 2))
 (r2 '((lambda (x) (* 2 x)) 3))
+(read-line (current-input-port) 'any)
+(read-line (current-input-port))
+.exit
+.exit
+.sss
