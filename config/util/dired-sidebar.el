@@ -8,7 +8,8 @@
               (unless (file-remote-p default-directory)
                 (auto-revert-mode))))
   :config
-  (setq-default dired-sidebar-width 50)
+  (setq-default dired-sidebar-width 50
+		dired-sidebar-theme 'vscode)
   
   (push 'toggle-window-split dired-sidebar-toggle-hidden-commands)
   (push 'rotate-windows dired-sidebar-toggle-hidden-commands)

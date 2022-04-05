@@ -19,7 +19,7 @@
 (defconst *default-font-size* 105)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
-(defconst *font-ligature* t)
+(defconst *font-ligature* nil)
 
 ;; configure whether to display certain controls.
 (defconst *menu-bar* nil)
@@ -48,7 +48,7 @@
 (defconst *day-theme* 'modus-operandi)
 (defconst *night-theme* 'modus-vivendi)
 (defconst *sunset-time* 17)
-(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -67,6 +67,9 @@
 
 ;; Whether to enable multi-cursor editing
 (defconst *multiple-cursors* t)
+
+;; Whether to use Evil
+(defconst *evil-mode* t)
 
 ;; ==================== Util Settings ====================
 
@@ -87,7 +90,12 @@
 ;; Choose whether to enable environments for certain programming languages based on switches
 
 (defconst *ocaml* t)
+
 (defconst *common-lisp* t)
+
 (defconst *scheme* t)
+
 (defconst *cpp* t)
+(defconst *cpp-irony* nil)
+
 (defconst *rust* t)
