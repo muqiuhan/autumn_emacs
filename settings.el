@@ -38,7 +38,7 @@
 
 ;; set the style of modeline, optional values: awesome-tray/doom-modeline/powerline/default/nil,
 ;; where nil means no modline is displayed
-(defconst *mode-line* 'nil)
+(defconst *mode-line* 'awesome-tray)
 
 ;; set the border width of the window (fringe-mode)
 ;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fringes.html
@@ -47,7 +47,7 @@
 ;; set the theme, Themes will be automatically selected based on time.
 (defconst *day-theme* 'modus-operandi)
 (defconst *night-theme* 'modus-vivendi)
-(defconst *sunset-time* 17)
+(defconst *sunset-time* 19)
 (defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================

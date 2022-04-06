@@ -7,6 +7,7 @@
 
 (load "~/.emacs.d/config/util/treemacs.el")
 (load "~/.emacs.d/config/util/window-numbering.el")
+(load "~/.emacs.d/config/util/writeroom.el")
 (load "~/.emacs.d/config/util/multiple-cursors.el")
 (load "~/.emacs.d/config/util/dired-sidebar.el")
 (load "~/.emacs.d/config/util/flycheck.el")
