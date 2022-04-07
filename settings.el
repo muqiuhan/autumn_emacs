@@ -12,7 +12,7 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Roboto Mono" "Monaco" "Menlo" "Noto Sans Mono"
+(defconst *default-font-list* '("Roboto Mono" "Noto Sans Mono" "Monaco" "Menlo"
 				"Fira Code" "Consolas" "Hack" "Input Mono" "SF Mono"
 				"JetBrains Mono"  "IBM Plex Mono" "Anonymous Pro"))
 
@@ -45,8 +45,8 @@
 (defconst *border-width* 0)
 
 ;; set the theme, Themes will be automatically selected based on time.
-(defconst *day-theme* 'modus-operandi)
-(defconst *night-theme* 'modus-vivendi)
+(defconst *day-theme* 'lazycat-light)
+(defconst *night-theme* 'lazycat-dark)
 (defconst *sunset-time* 19)
 (defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
 

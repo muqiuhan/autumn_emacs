@@ -53,8 +53,10 @@
     dune-format
     dashboard))
 
+(load "~/.emacs.d/site-lisp/lazycat-theme/lazycat-theme.el")
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/config/config.el")
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
