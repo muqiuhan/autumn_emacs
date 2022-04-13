@@ -45,10 +45,10 @@
 (defconst *border-width* 0)
 
 ;; set the theme, Themes will be automatically selected based on time.
-(defconst *day-theme* 'lazycat-light)
-(defconst *night-theme* 'lazycat-dark)
+(defconst *day-theme* 'modus-operandi)
+(defconst *night-theme* 'modus-vivendi)
 (defconst *sunset-time* 19)
-(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
