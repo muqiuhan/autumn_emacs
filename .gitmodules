@@ -1,0 +1,3 @@
+[submodule "screenshot"]
+	path = site-lisp/screenshot
+	url = https://github.com/tecosaur/screenshot/

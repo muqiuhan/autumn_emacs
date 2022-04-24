@@ -33,7 +33,10 @@
 (use-package flycheck
   :diminish
   :commands flycheck-redefine-standard-error-levels
-  :hook (after-init . global-flycheck-mode)
+  :hook ((c++-mode . flycheck-mode)
+	 (ocaml-mode . flycheck-mode)
+	 (racket-mode . flycheck-mode))
+  
   :init (setq flycheck-global-modes
               '(not text-mode outline-mode fundamental-mode lisp-interaction-mode
                     org-mode diff-mode shell-mode eshell-mode term-mode vterm-mode)

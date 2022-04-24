@@ -9,28 +9,12 @@
     olivetti
     which-key
     rainbow-identifiers
-    company-irony
-    flycheck-irony
-    irony-eldoc
     flycheck-pos-tip
     flycheck-posframe
     flycheck-popup-tip
-    dired-sidebar
-    vscode-icon
     treemacs
-    slime-company
-    slime-repl-ansi-color
     racket-mode
-    geiser-racket
-    hy-mode
-    poetry
-    python-mode
-    slime
-    cmake-ide
-    cmake-mode
-    clang-format
     ocp-indent
-    eglot
     all-the-icons
     lsp-treemacs
     company
@@ -54,10 +38,10 @@
     use-package
     tuareg
     dune
+    merlin
     dune-format
     dashboard))
 
-(load "~/.emacs.d/site-lisp/lazycat-theme/lazycat-theme.el")
 (load "~/.emacs.d/settings.el")
 (load "~/.emacs.d/config/config.el")
 
@@ -75,7 +59,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(cfrs-border-color ((t (:background "#a8a8a8")))))
 ;; ## added by OPAM user-setup for emacs / base ## 56ab50dc8996d2bb95e7856a6eddb17b ## you can edit, but keep this line
 (require 'opam-user-setup "~/.emacs.d/opam-user-setup.el")
 ;; ## end of OPAM user-setup addition for emacs / base ## keep this line

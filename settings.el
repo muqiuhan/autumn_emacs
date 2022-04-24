@@ -12,9 +12,7 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Roboto Mono" "Noto Sans Mono" "Monaco" "Menlo"
-				"Fira Code" "Consolas" "Hack" "Input Mono" "SF Mono"
-				"JetBrains Mono"  "IBM Plex Mono" "Anonymous Pro"))
+(defconst *default-font-list* '("Operator Mono" "Monaco" "Menlo" "Fira Code" "Consolas" "Hack" "Input Mono" "SF Mono" "JetBrains Mono"  "IBM Plex Mono" "Anonymous Pro"))
 
 (defconst *default-font-size* 105)
 
@@ -27,6 +25,9 @@
 
 ;; start window size
 (defconst *start-window* 'max)
+
+;; window opacity
+(defconst *window-opacity* 95)
 
 ;; see : https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Bars.html
 (defconst *tab-bar* nil)
@@ -84,18 +85,3 @@
 
 ;; How flycheck is displayed (pos-tip / posframe / popup-tip)
 (defconst *flycheck-show-mode* 'pos-tip)
-
-;; ==================== Develop Settings ====================
-
-;; Choose whether to enable environments for certain programming languages based on switches
-
-(defconst *ocaml* t)
-
-(defconst *common-lisp* t)
-
-(defconst *scheme* t)
-
-(defconst *cpp* t)
-(defconst *cpp-irony* nil)
-
-(defconst *rust* t)
