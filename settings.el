@@ -4,7 +4,7 @@
 (defconst *mirror-source* 'melpa)
 
 ;; Use proxy
-(when nil
+(when t
   (setq-default url-proxy-services
 		'(("no_proxy" . "^\\(localhost\\|10\\..*\\|192\\.168\\..*\\)")
 		  ("http" . "127.0.0.1:7890")
@@ -84,4 +84,4 @@
 (defconst *youdao-dictionary-result-display-scheme* 'postframe)
 
 ;; How flycheck is displayed (pos-tip / posframe / popup-tip)
-(defconst *flycheck-show-mode* 'pos-tip)
+(defconst *flycheck-show-mode* 'posframe)

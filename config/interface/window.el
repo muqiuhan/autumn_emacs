@@ -67,6 +67,5 @@
       ()))))
 
 (set-frame-parameter (selected-frame) 'alpha (list *window-opacity* 50))
-(add-to-list 'default-frame-alist '(alpha . (list *window-opacity* 50)))
 
 (fringe-mode *border-width*)
