@@ -17,12 +17,17 @@
 (load "~/.emacs.d/config/util/org.el")
 (load "~/.emacs.d/config/util/highlight.el")
 (load "~/.emacs.d/config/util/which-key.el")
+(load "~/.emacs.d/config/util/dap-mode.el")
 (load "~/.emacs.d/config/util/youdao-dictionary.el")
 (load "~/.emacs.d/config/util/screenshot.el")
 
 (load "~/.emacs.d/config/develop/ocaml.el")
+(load "~/.emacs.d/config/develop/rust.el")
 
 ;; ==================== custom Settings ====================
 
-(set-face-attribute 'line-number nil :background "#00a")
-(set-face-attribute 'line-number-current-line nil  :background "#00f")
+(set-face-attribute 'line-number nil :background "#007")
+(set-face-attribute 'line-number-current-line nil :background "#00f")
+(set-face-attribute 'region nil :background "#fff" :foreground "#000")
+
+(setq-default cursor-type 'bar)

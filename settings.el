@@ -12,9 +12,9 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Operator Mono" "Monaco" "Menlo" "Fira Code" "Consolas" "Hack" "Input Mono" "SF Mono" "JetBrains Mono"  "IBM Plex Mono" "Anonymous Pro"))
+(defconst *default-font-list* '("Operator Mono" "Roboto Mono" "SF Mono" "Menlo" "Monaco" "JetBrains Mono" "Fira Code" "Cascadia Code"))
 
-(defconst *default-font-size* 105)
+(defconst *default-font-size* 115)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* nil)

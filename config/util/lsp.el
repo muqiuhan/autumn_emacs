@@ -38,6 +38,20 @@
                lsp-format-buffer
                lsp-organize-imports
                lsp-install-server)
+    :custom
+    ;; what to use when checking on-save. "check" is default, I prefer clippy
+    (lsp-rust-analyzer-cargo-watch-command "clippy")
+    (lsp-eldoc-render-all t)
+    (lsp-idle-delay 0.6)
+    ;; enable / disable the hints as you prefer:
+    (lsp-rust-analyzer-server-display-inlay-hints t)
+    (lsp-rust-analyzer-display-lifetime-elision-hints-enable "skip_trivial")
+    (lsp-rust-analyzer-display-chaining-hints t)
+    (lsp-rust-analyzer-display-lifetime-elision-hints-use-parameter-names nil)
+    (lsp-rust-analyzer-display-closure-return-type-hints t)
+    (lsp-rust-analyzer-display-parameter-hints nil)
+    (lsp-rust-analyzer-display-reborrow-hints nil)
+    
     :custom-face
     (lsp-headerline-breadcrumb-path-error-face
      ((t :underline (:style wave :color ,(face-foreground 'error))
@@ -288,17 +302,17 @@
               ))
 
           (lsp-defun my-lsp-ivy--format-symbol-match
-		     ((sym &as &SymbolInformation :kind :location (&Location :uri))
-		      project-root)
-		     "Convert the match returned by `lsp-mode` into a candidate string."
-		     (let* ((sanitized-kind (if (< kind (length lsp-ivy-symbol-kind-icons)) kind 0))
-			    (type (elt lsp-ivy-symbol-kind-icons sanitized-kind))
-			    (typestr (if lsp-ivy-show-symbol-kind (format "%s " type) ""))
-			    (pathstr (if lsp-ivy-show-symbol-filename
-					 (propertize (format " · %s" (file-relative-name (lsp--uri-to-path uri) project-root))
-						     'face font-lock-comment-face)
-				       "")))
-		       (concat typestr (lsp-render-symbol-information sym ".") pathstr)))
+	    ((sym &as &SymbolInformation :kind :location (&Location :uri))
+	     project-root)
+	    "Convert the match returned by `lsp-mode` into a candidate string."
+	    (let* ((sanitized-kind (if (< kind (length lsp-ivy-symbol-kind-icons)) kind 0))
+		   (type (elt lsp-ivy-symbol-kind-icons sanitized-kind))
+		   (typestr (if lsp-ivy-show-symbol-kind (format "%s " type) ""))
+		   (pathstr (if lsp-ivy-show-symbol-filename
+				(propertize (format " · %s" (file-relative-name (lsp--uri-to-path uri) project-root))
+					    'face font-lock-comment-face)
+			      "")))
+	      (concat typestr (lsp-render-symbol-information sym ".") pathstr)))
           (advice-add #'lsp-ivy--format-symbol-match :override #'my-lsp-ivy--format-symbol-match))))
 
     ;; Debug
