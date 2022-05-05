@@ -1,5 +1,5 @@
 # INTRODUCTION
-AutumnEmacs is a minimalist GNU Emacs configuration, which will pre-configure OCaml, Racket, Clojure, CommonLisp, Scheme, and EmacsLisp development environments for you, including some related productivity plugins.
+AutumnEmacs is a minimalist GNU Emacs configuration for OCaml, Racket and Rust development, which nonetheless provides support for lsp.
 
 # USAGE
 Customize the components of the profile by changing the constant values in settings.el
