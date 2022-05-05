@@ -12,7 +12,7 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Operator Mono" "Roboto Mono" "SF Mono" "Menlo" "Monaco" "JetBrains Mono" "Fira Code" "Cascadia Code"))
+(defconst *default-font-list* '("Monego Bold" "SF Mono" "Menlo" "Monaco" "JetBrains Mono" "Fira Code" "Cascadia Code"))
 
 (defconst *default-font-size* 115)
 
@@ -22,6 +22,7 @@
 ;; configure whether to display certain controls.
 (defconst *menu-bar* nil)
 (defconst *tool-bar* nil)
+(defconst *sort-tab* t)
 
 ;; start window size
 (defconst *start-window* 'max)

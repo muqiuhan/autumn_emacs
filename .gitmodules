@@ -1,3 +1,6 @@
 [submodule "screenshot"]
 	path = site-lisp/screenshot
 	url = https://github.com/tecosaur/screenshot/
+[submodule "sort-tab"]
+	path = site-lisp/sort-tab
+	url = https://github.com/manateelazycat/sort-tab

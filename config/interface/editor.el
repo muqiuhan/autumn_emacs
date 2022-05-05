@@ -9,6 +9,7 @@
 	(add-hook 'tuareg-mode-hook 'display-line-numbers-mode)
 	(add-hook 'python-mode-hook 'display-line-numbers-mode)
 	(add-hook 'clojure-mode-hook 'display-line-numbers-mode)
+	(add-hook 'cmake-mode-hook 'display-line-numbers-mode)
 	(add-hook 'racket-mode-hook 'display-line-numbers-mode))
     (progn
       (require 'linum)
