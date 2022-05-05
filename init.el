@@ -1,6 +1,5 @@
 (defconst *base-package-list*
-  '(window-numbering
-    writeroom-mode
+  '(writeroom-mode
     treemacs-projectile
     telega
     dap-mode

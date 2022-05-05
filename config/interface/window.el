@@ -62,9 +62,9 @@
   (when *sort-tab*
     (load "~/.emacs.d/site-lisp/sort-tab/sort-tab.el")
     (require 'sort-tab)
-    (sort-tab-mode t)
-    (global-set-key (kbd "C-x x f") 'sort-tab-select-next-tab)
-    (global-set-key (kbd "C-x x b") 'sort-tab-select-prev-tab)
+    (sort-tab-mode 1)
+    (global-set-key (kbd "C-M-n") 'sort-tab-select-next-tab)
+    (global-set-key (kbd "C-M-p") 'sort-tab-select-prev-tab)
     (global-set-key (kbd "C-x x c") 'sort-tab-close-all-tabs)
     (global-set-key (kbd "C-x x x") 'sort-tab-close-current-tab)))
 
