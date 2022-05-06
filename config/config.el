@@ -1,4 +1,5 @@
 (load "~/.emacs.d/config/package.el")
+
 (load "~/.emacs.d/config/interface/dashboard.el")
 (load "~/.emacs.d/config/interface/window.el")
 (load "~/.emacs.d/config/interface/editor.el")

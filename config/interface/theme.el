@@ -17,4 +17,8 @@
 (set-face-attribute 'line-number nil :background "#0000aa" :font (face-attribute 'default :font))
 (set-face-attribute 'default nil :background "#111111")
 
-(set-cursor-color "#00ff00")
+(when *cursor-type*
+  (setq-default cursor-type *cursor-type*))
+
+(when *cursor-color*
+  (set-cursor-color *cursor-color*))

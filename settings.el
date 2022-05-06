@@ -70,6 +70,10 @@
 ;; Whether to enable multi-cursor editing
 (defconst *multiple-cursors* t)
 
+;; Setup cursor (nil mean to use default)
+(defconst *cursor-color* "#00ff00")
+(defconst *cursor-type* 'bar)
+
 ;; Whether to use Evil
 (defconst *evil-mode* t)
 
