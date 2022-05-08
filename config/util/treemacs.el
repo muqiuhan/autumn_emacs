@@ -10,7 +10,7 @@
   :custom-face
   (cfrs-border-color ((t (:background ,(face-foreground 'font-lock-comment-face nil t)))))
   :bind (([f8]        . treemacs)
-         ("M-0"       . treemacs-select-window)
+         ("C-<return>"       . treemacs-select-window)
          ("C-x 1"     . treemacs-delete-other-windows)
          ("C-x t 1"   . treemacs-delete-other-windows)
          ("C-x t t"   . treemacs)
@@ -26,7 +26,7 @@
         treemacs-follow-after-init       t
 	treemacs-position                'right
         treemacs-width                   50
-        treemacs-no-png-images           t)
+        treemacs-no-png-images           nil)
   :config
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)

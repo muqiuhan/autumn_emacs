@@ -9,13 +9,14 @@
       (load-theme *night-theme* t))
   (load-theme *theme* t))
 
+(when (string= "#000000" (face-attribute 'default :background))
+  (set-face-attribute 'default nil :background "#111")
+  (set-face-attribute 'line-number nil :background "#00a" :font (face-attribute 'default :font))
+  (set-face-attribute 'line-number-current-line nil :background "#00f" :font (face-attribute 'default :font)))
+
 (use-package vscode-icon
   :ensure t
   :commands (vscode-icon-for-file))
-
-(set-face-attribute 'line-number-current-line nil :background "#0000ff" :font (face-attribute 'default :font))
-(set-face-attribute 'line-number nil :background "#0000aa" :font (face-attribute 'default :font))
-(set-face-attribute 'default nil :background "#111111")
 
 (when *cursor-type*
   (setq-default cursor-type *cursor-type*))

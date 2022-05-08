@@ -12,7 +12,7 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Monego Bold" "SF Mono" "Menlo" "Monaco" "JetBrains Mono" "Fira Code" "Cascadia Code"))
+(defconst *default-font-list* '("Monego Bold" "Menlo" "Monaco" "JetBrains Mono" "Fira Code" "Cascadia Code"))
 
 (defconst *default-font-size* 115)
 
@@ -28,7 +28,7 @@
 (defconst *start-window* 'max)
 
 ;; window opacity
-(defconst *window-opacity* 95)
+(defconst *window-opacity* 100)
 
 ;; see : https://www.gnu.org/software/emacs/manual/html_node/emacs/Tab-Bars.html
 (defconst *tab-bar* nil)
@@ -47,10 +47,10 @@
 (defconst *border-width* 0)
 
 ;; set the theme, Themes will be automatically selected based on time.
-(defconst *day-theme* 'modus-operandi)
-(defconst *night-theme* 'modus-vivendi)
+(defconst *day-theme* 'doom-gruvbox-light)
+(defconst *night-theme* 'doom-gruvbox)
 (defconst *sunset-time* 19)
-(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -71,16 +71,16 @@
 (defconst *multiple-cursors* t)
 
 ;; Setup cursor (nil mean to use default)
-(defconst *cursor-color* "#00ff00")
-(defconst *cursor-type* 'bar)
+(defconst *cursor-color* nil)
+(defconst *cursor-type* 'box)
 
 ;; Whether to use Evil
 (defconst *evil-mode* t)
 
 ;; ==================== Util Settings ====================
 
-;; enable global-company-mode
-(defconst *company* t)
+;; Company or Corfu?
+(defconst *complete-mode* 'company)
 
 ;; youdao dictionary
 (defconst *youdao-dictionary-key* "C-c y")

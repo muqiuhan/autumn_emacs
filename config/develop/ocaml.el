@@ -90,11 +90,11 @@
   (add-hook 'caml-mode-hook h t))
 
 (defun opam-setup-complete ()
-  (if (require 'company nil t)
+  (if (require 'corfu nil t)
     (opam-setup-add-ocaml-hook
       (lambda ()
-         (company-mode)
-         (defalias 'auto-complete 'company-complete)))
+         (corfu-mode)
+         (defalias 'auto-complete 'company-complete 'corfu-complete)))
     (require 'auto-complete nil t)))
 
 (defun opam-setup-ocp-indent ()
