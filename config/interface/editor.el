@@ -30,3 +30,12 @@
 (when *smooth-scroll*
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control) . nil)))
   (setq mouse-wheel-progressive-speed nil))
+
+(when *smart-cursor-color*
+  (hl-line-mode -1)
+  (when *hi-line*
+    (global-hl-line-mode -1))
+  (smart-cursor-color-mode +1))
+
+(when *beacon*
+  (beacon-mode 1))

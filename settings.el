@@ -50,7 +50,7 @@
 (defconst *day-theme* 'doom-gruvbox-light)
 (defconst *night-theme* 'doom-gruvbox)
 (defconst *sunset-time* 19)
-(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -70,12 +70,18 @@
 ;; Whether to enable multi-cursor editing
 (defconst *multiple-cursors* t)
 
-;; Setup cursor (nil mean to use default)
+(defconst *smart-cursor-color* t) ;; Change cursor-color dynamically
 (defconst *cursor-color* nil)
 (defconst *cursor-type* 'box)
+(defconst *beacon* t) ;; Whenever the window scrolls a light will shine on top of your cursor so you know where it is.
 
 ;; Whether to use Evil
 (defconst *evil-mode* t)
+
+;; ==================== Org Settings ====================
+(defconst *org-mode-font-list* *default-font-list*)
+(defconst *org-mode-font-size* *default-font-size*)
+
 
 ;; ==================== Util Settings ====================
 
