@@ -1,3 +1,5 @@
+(load "~/.emacs.d/site-lisp/real-time-cursor-color.el/real-time-cursor-color.el")
+
 (when *line-number*
   (if (version<= "26.0.50" emacs-version)
       (progn
@@ -10,6 +12,7 @@
 	(add-hook 'python-mode-hook 'display-line-numbers-mode)
 	(add-hook 'clojure-mode-hook 'display-line-numbers-mode)
 	(add-hook 'cmake-mode-hook 'display-line-numbers-mode)
+	(add-hook 'fsharp-mode-hook 'display-line-numbers-mode)
 	(add-hook 'racket-mode-hook 'display-line-numbers-mode))
     (progn
       (require 'linum)
@@ -18,11 +21,13 @@
       (add-hook 'emacs-lisp-mode-hook 'linum-mode)
       (add-hook 'c++-mode-hook 'linum-mode)
       (add-hook 'tuareg-mode-hook 'linum-mode)
+      (add-hook 'fsharp-mode-hook 'linum-mode)
       (add-hook 'rust-mode-hook 'linum-mode)
       (add-hook 'scheme-mode-hook 'linum-mode)
       (add-hook 'python-mode-hook 'linum-mode)
       (add-hook 'clojure-mode-hook 'linum-mode)
       (add-hook 'racket-mode-hook 'linum-mode))))
+
 
 (when *hi-line*
   (global-hl-line-mode +1))
@@ -31,11 +36,8 @@
   (setq mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control) . nil)))
   (setq mouse-wheel-progressive-speed nil))
 
-(when *smart-cursor-color*
-  (hl-line-mode -1)
-  (when *hi-line*
-    (global-hl-line-mode -1))
-  (smart-cursor-color-mode +1))
+(when *real-time-cursor-color*
+  (real-time-cursor-color-mode t))
 
 (when *beacon*
   (beacon-mode 1))

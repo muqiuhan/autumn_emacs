@@ -12,9 +12,9 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Monego Bold" "Menlo" "Monaco" "JetBrains Mono" "Fira Code" "Cascadia Code"))
+(defconst *default-font-list* '("Recursive Mn Csl St SmB" "Cascadia Code" "Roboto Mono" "Menlo" "Monaco" "SF Mono" "Consolas"))
 
-(defconst *default-font-size* 115)
+(defconst *default-font-size* 120)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* nil)
@@ -22,7 +22,7 @@
 ;; configure whether to display certain controls.
 (defconst *menu-bar* nil)
 (defconst *tool-bar* nil)
-(defconst *sort-tab* t)
+(defconst *sort-tab* nil)
 
 ;; start window size
 (defconst *start-window* 'max)
@@ -50,7 +50,7 @@
 (defconst *day-theme* 'doom-gruvbox-light)
 (defconst *night-theme* 'doom-gruvbox)
 (defconst *sunset-time* 19)
-(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'modus-operandi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -70,20 +70,18 @@
 ;; Whether to enable multi-cursor editing
 (defconst *multiple-cursors* t)
 
-(defconst *smart-cursor-color* t) ;; Change cursor-color dynamically
+(defconst *real-time-cursor-color* nil) ;; Change cursor-color dynamically
 (defconst *cursor-color* nil)
-(defconst *cursor-type* 'box)
+(defconst *cursor-type* 'bar)
 (defconst *beacon* t) ;; Whenever the window scrolls a light will shine on top of your cursor so you know where it is.
 
 ;; Whether to use Evil
 (defconst *evil-mode* t)
 
-;; ==================== Org Settings ====================
-(defconst *org-mode-font-list* *default-font-list*)
-(defconst *org-mode-font-size* *default-font-size*)
-
-
 ;; ==================== Util Settings ====================
+
+;; Leetcode support
+(defconst *leetcode* t)
 
 ;; Company or Corfu?
 (defconst *complete-mode* 'company)

@@ -4,3 +4,6 @@
 [submodule "sort-tab"]
 	path = site-lisp/sort-tab
 	url = https://github.com/manateelazycat/sort-tab
+[submodule "real-time-cursor-color.el"]
+	path = site-lisp/real-time-cursor-color.el
+	url = https://github.com/muqiuhan/real-time-cursor-color.el

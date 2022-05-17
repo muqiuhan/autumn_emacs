@@ -6,8 +6,8 @@
       dashboard-set-navigator t
       dashboard-center-content t
       dashboard-set-file-icons 'all-the-icons
-      dashboard-items '((recents . 10)
-			(projects . 5)
-			(agenda . 5)))
+      dashboard-items '((recents . 20)
+			(projects . 10)
+			(agenda . 10)))
 
 (dashboard-setup-startup-hook)
