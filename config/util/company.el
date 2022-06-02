@@ -64,6 +64,8 @@
                            (company-dabbrev-code company-keywords company-files)
                            company-dabbrev))
 
+  (set-face-attribute 'company-preview nil :font (face-attribute 'default :font))
+
   (defun my-company-yasnippet ()
     "Hide the current completeions and show snippets."
     (interactive)

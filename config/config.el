@@ -1,6 +1,5 @@
 (load "~/.emacs.d/config/package.el")
 
-(load "~/.emacs.d/config/interface/dashboard.el")
 (load "~/.emacs.d/config/interface/window.el")
 (load "~/.emacs.d/config/interface/editor.el")
 (load "~/.emacs.d/config/interface/modeline.el")
@@ -23,6 +22,8 @@
 (load "~/.emacs.d/config/util/youdao-dictionary.el")
 (load "~/.emacs.d/config/util/screenshot.el")
 (load "~/.emacs.d/config/util/ctags.el")
+
+(load "~/.emacs.d/config/interface/dashboard.el")
 
 (when *leetcode*
   (load "~/.emacs.d/config/util/leetcode.el"))

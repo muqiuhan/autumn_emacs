@@ -12,9 +12,9 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Recursive Mn Csl St SmB" "Cascadia Code" "Roboto Mono" "Menlo" "Monaco" "SF Mono" "Consolas"))
+(defconst *default-font-list* '("Recursive Mn Lnr St SmB" "Cascadia Code" "Roboto Mono" "Menlo" "Monaco" "SF Mono" "Consolas"))
 
-(defconst *default-font-size* 120)
+(defconst *default-font-size* 125)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* nil)
@@ -47,10 +47,10 @@
 (defconst *border-width* 0)
 
 ;; set the theme, Themes will be automatically selected based on time.
-(defconst *day-theme* 'doom-gruvbox-light)
-(defconst *night-theme* 'doom-gruvbox)
+(defconst *day-theme* 'leuven)
+(defconst *night-theme* 'wheatgrass)
 (defconst *sunset-time* 19)
-(defconst *theme* 'modus-operandi) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 

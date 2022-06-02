@@ -26,7 +26,7 @@
         treemacs-follow-after-init       t
 	treemacs-position                'right
         treemacs-width                   50
-        treemacs-no-png-images           nil)
+        treemacs-no-png-images           t)
   :config
   (treemacs-follow-mode t)
   (treemacs-filewatch-mode t)
