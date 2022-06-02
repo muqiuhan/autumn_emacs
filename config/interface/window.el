@@ -1,17 +1,17 @@
+(when (not *menu-bar*)
+  (menu-bar-mode 0))
+
+(when (not *tool-bar*)
+  (tool-bar-mode 0))
+
+(when (not *tab-bar*)  
+  (tab-bar-mode 0))
+
+(when (not *scroll-bar*)
+  (scroll-bar-mode 0))
+
 (when (display-graphic-p)
   ;; window
-  (when (not *menu-bar*)
-    (menu-bar-mode 0))
-
-  (when (not *tool-bar*)
-    (tool-bar-mode 0))
-
-  (when (not *tab-bar*)  
-    (tab-bar-mode 0))
-
-  (when (not *scroll-bar*)
-    (scroll-bar-mode 0))
-
   (defun x11-maximize-frame ()
     "Maximize the current frame (to full screen)"
     (interactive)
@@ -69,12 +69,12 @@
     (global-set-key (kbd "C-x x x") 'sort-tab-close-current-tab))
 
   (when *start-window*
-  (cond
-   ((eq *start-window* 'max)
-    (progn
-      (when (eq system-type 'gnu/linux)
-	(x11-maximize-frame))
-      (when (eq system-type 'windows-nt)
-	(w32-send-sys-command 61488))))
-   (t
-    ()))))
+    (cond
+     ((eq *start-window* 'max)
+      (progn
+	(when (eq system-type 'gnu/linux)
+	  (x11-maximize-frame))
+	(when (eq system-type 'windows-nt)
+	  (w32-send-sys-command 61488))))
+     (t
+      ()))))
