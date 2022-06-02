@@ -13,3 +13,5 @@
 (set-face-attribute 'dashboard-items-face nil :font (face-attribute 'default :font))
 
 (dashboard-setup-startup-hook)
+
+(provide 'interface-dashboard)

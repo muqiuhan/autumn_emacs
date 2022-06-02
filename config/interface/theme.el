@@ -21,3 +21,5 @@
 
 (when *cursor-color*
   (set-cursor-color *cursor-color*))
+
+(provide 'interface-theme)

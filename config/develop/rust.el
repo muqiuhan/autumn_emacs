@@ -27,3 +27,4 @@
   (when buffer-file-name
     (setq-local buffer-save-without-query t)))
 
+(provide 'develop-rust)

@@ -12,9 +12,9 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Recursive Mn Lnr St SmB" "Cascadia Code" "Roboto Mono" "Menlo" "Monaco" "SF Mono" "Consolas"))
+(defconst *default-font-list* '("Recursive Mn Lnr St Bold" "Cascadia Code" "Roboto Mono" "Menlo" "Monaco" "SF Mono" "Consolas"))
 
-(defconst *default-font-size* 125)
+(defconst *default-font-size* 105)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* nil)
@@ -47,10 +47,10 @@
 (defconst *border-width* 0)
 
 ;; set the theme, Themes will be automatically selected based on time.
-(defconst *day-theme* 'leuven)
-(defconst *night-theme* 'wheatgrass)
+(defconst *day-theme* 'modus-operandi)
+(defconst *night-theme* 'modus-vivendi)
 (defconst *sunset-time* 19)
-(defconst *theme* 'auto) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -75,16 +75,7 @@
 (defconst *cursor-type* 'bar)
 (defconst *beacon* t) ;; Whenever the window scrolls a light will shine on top of your cursor so you know where it is.
 
-;; Whether to use Evil
-(defconst *evil-mode* t)
-
 ;; ==================== Util Settings ====================
-
-;; Leetcode support
-(defconst *leetcode* t)
-
-;; Company or Corfu?
-(defconst *complete-mode* 'company)
 
 ;; youdao dictionary
 (defconst *youdao-dictionary-key* "C-c y")

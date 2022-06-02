@@ -13,3 +13,6 @@
        ((eq *youdao-dictionary-result-display-scheme* 'popup-tip)
 	(youdao-dictionary-search-at-point+)))
       (youdao-dictionary-search-at-point+))))
+
+(provide 'util-youdao-dictionary)
+

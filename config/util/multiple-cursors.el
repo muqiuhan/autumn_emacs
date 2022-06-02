@@ -12,3 +12,5 @@
            ("C-S-<mouse-1>" . mc/add-cursor-on-click)
            :map mc/keymap
            ("C-|" . mc/vertical-align-with-space))))
+
+(provide 'util-multiple-cursors)

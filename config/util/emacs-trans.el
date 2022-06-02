@@ -6,3 +6,5 @@
               comment-translate-selected-color "red")
 
 (global-set-key (kbd "C-S-t") 'translate-select-string)
+
+(provide 'util-emacs-trans)

@@ -25,3 +25,5 @@
 (add-hook 'python-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'clojure-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'tuareg-mode-hook 'highlight-indent-guides-mode)
+
+(provide 'util-highlight)

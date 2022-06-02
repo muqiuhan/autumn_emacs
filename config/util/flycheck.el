@@ -112,3 +112,5 @@
     :hook (flycheck-mode . flycheck-popup-tip-mode)))
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; init-flycheck.el ends here
+
+(provide 'util-flycheck)

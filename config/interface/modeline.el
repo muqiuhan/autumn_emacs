@@ -20,3 +20,5 @@
 	())))
 
   (add-hook 'after-init-hook '(lambda () (setq-default mode-line-format nil))))
+
+(provide 'interface-modeline)

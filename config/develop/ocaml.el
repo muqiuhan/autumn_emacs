@@ -167,3 +167,5 @@
   (add-hook 'caml-mode-hook 'ocp-indent-caml-mode-setup  t)
   (setq ocp-indent-path "/home/muqiu-han/.opam/default/bin/ocp-indent"))
 ;; ## end of OPAM user-setup addition for emacs / ocp-indent ## keep this line
+
+(provide 'develop-ocaml)

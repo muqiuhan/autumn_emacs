@@ -41,3 +41,5 @@
 
 (when *beacon*
   (beacon-mode 1))
+
+(provide 'interface-editor)

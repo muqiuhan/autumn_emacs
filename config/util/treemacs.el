@@ -56,3 +56,5 @@
     :demand
     :functions treemacs-set-scope-type
     :config (treemacs-set-scope-type 'Perspectives)))
+
+(provide 'util-treemacs)

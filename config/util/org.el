@@ -22,3 +22,5 @@
  '(org-level-8 ((t (:family "monospace")))))
 
 (add-hook 'org-mode-hook 'olivetti-mode)
+
+(provide 'util-org)

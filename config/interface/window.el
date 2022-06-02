@@ -26,7 +26,6 @@
                                       :font font
                                       :height *default-font-size*))
 
-
   (when *font-ligature*
     (load "~/.emacs.d/site-lisp/ligature.el/ligature.el")
     (use-package ligature
@@ -78,3 +77,5 @@
 	  (w32-send-sys-command 61488))))
      (t
       ()))))
+
+(provide 'interface-window)
