@@ -6,3 +6,18 @@
 .exit
 .exit
 .sss
+(define stop (serve 8081))
+(define-values (cin cout) (tcp-connect "localhost" "8081"))
+(define-values (cin cout) (tcp-connect "localhost" 8081))
+(read-line cin)
+(serve 8080)
+(serve 8080)
+(serve 8080)
+(serve 8080)
+(serve 8080)
+(define stop (serve 8080))
+(stop)
+(enter "serve.rkt")
+(enter! "serve.rkt")
+(define stop (serve 8080))
+(define stop (serve 8080))
