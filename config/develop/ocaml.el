@@ -3,6 +3,7 @@
 (require 'flycheck)
 (require 'ocp-indent)
 (require 'ocamlformat)
+(require 'merlin)
 
 (defun ocaml-file-has-errors? ()
   (flycheck-list-errors)

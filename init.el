@@ -1,27 +1,17 @@
 (defconst *base-package-list*
-  '(writeroom-mode
-    window-numbering
+  '(window-numbering
     treemacs-projectile
     org-superstar
-    leetcode
-    fsharp-mode
-    corfu
-    smart-cursor-color
-    citre
     beacon
-    telega
-    dap-mode
     multiple-cursors
     treemacs-magit
     treemacs-persp
     youdao-dictionary
-    irony
     olivetti
     which-key
     rainbow-identifiers
     flycheck-pos-tip
     flycheck-posframe
-    doom-themes
     flycheck-popup-tip
     treemacs
     racket-mode
@@ -38,11 +28,6 @@
     projectile
     highlight-indent-guides
     rainbow-delimiters
-    geiser
-    geiser-chez
-    geiser-gambit
-    geiser-guile
-    geiser-mit 
     company-prescient
     yasnippet
     company-box

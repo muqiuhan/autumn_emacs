@@ -50,7 +50,7 @@
 (defconst *day-theme* 'modus-operandi)
 (defconst *night-theme* 'modus-vivendi)
 (defconst *sunset-time* 19)
-(defconst *theme* 'modus-operandi) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
