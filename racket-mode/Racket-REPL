@@ -41,3 +41,4 @@
     (BOLD        .            "\e[1m"   )
     (UNDERLINE   .      "\e[4m"         )))
 ansi-color
+null

@@ -78,4 +78,8 @@
      (t
       ()))))
 
+(setq frame-title-format
+      `((buffer-file-name "%f" "%b")
+        ,(format " - AutumnEmacs %s" emacs-version)))
+
 (provide 'interface-window)

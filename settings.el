@@ -12,7 +12,7 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Recursive Mn Lnr St Bold" "Cascadia Code" "Roboto Mono" "Menlo" "Monaco" "SF Mono" "Consolas"))
+(defconst *default-font-list* '("Recursive Mn Lnr St XBd" "Cascadia Code" "Roboto Mono" "Menlo" "Monaco" "SF Mono" "Consolas"))
 
 (defconst *default-font-size* 105)
 
