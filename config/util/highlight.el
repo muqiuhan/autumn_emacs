@@ -15,6 +15,7 @@
 (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'tuareg-mode-hook 'rainbow-delimiters-mode)
 (add-hook 'rust-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'go-mode-hook 'rainbow-delimiters-mode)
 
 (add-hook 'c++-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'c-mode-hook 'highlight-indent-guides-mode)
@@ -25,5 +26,6 @@
 (add-hook 'python-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'clojure-mode-hook 'highlight-indent-guides-mode)
 (add-hook 'tuareg-mode-hook 'highlight-indent-guides-mode)
+(add-hook 'go-mode-hook 'highlight-indent-guides-mode)
 
 (provide 'util-highlight)

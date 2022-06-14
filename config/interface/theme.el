@@ -3,11 +3,12 @@
 (defun get-current-hour ()
   (string-to-number (substring (current-time-string) 11 13)))
 
-(if (eq *theme* 'auto)
-    (if (> *sunset-time* (get-current-hour))
-	(load-theme *day-theme* t)
-      (load-theme *night-theme* t))
-  (load-theme *theme* t))
+(when *theme*
+  (if (eq *theme* 'auto)
+      (if (> *sunset-time* (get-current-hour))
+	  (load-theme *day-theme* t)
+	(load-theme *night-theme* t))
+    (load-theme *theme* t)))
 
 (set-face-attribute 'line-number nil :background "#00a" :font (face-attribute 'default :font) :foreground "#aaa")
 (set-face-attribute 'line-number-current-line nil :background "#00f" :font (face-attribute 'default :font) :foreground "#fff")
