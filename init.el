@@ -54,11 +54,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cfrs-border-color ((t (:background "#505050"))))
+ '(cfrs-border-color ((t (:background "#a8a8a8"))))
  '(flycheck-posframe-background-face ((t (:inherit tooltip))))
  '(flycheck-posframe-border-face ((t (:inherit font-lock-comment-face))))
- '(flycheck-posframe-face ((t (:foreground "#005e00"))))
- '(flycheck-posframe-info-face ((t (:foreground "#005e00"))))
+ '(flycheck-posframe-face ((t (:foreground nil))))
+ '(flycheck-posframe-info-face ((t (:foreground nil))))
  '(org-level-1 ((t (:family "monospace" :height 1.3))))
  '(org-level-2 ((t (:family "monospace" :height 1.2))))
  '(org-level-3 ((t (:family "monospace" :height 1.15))))

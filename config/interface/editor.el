@@ -35,7 +35,7 @@
   (global-hl-line-mode +1))
 
 (when *smooth-scroll*
-  (setq mouse-wheel-scroll-amount '(1 ((shift) . 5) ((control) . nil)))
+  (setq mouse-wheel-scroll-amount '(3 ((shift) . 6) ((control) . nil)))
   (setq mouse-wheel-progressive-speed nil))
 
 (when *real-time-cursor-color*

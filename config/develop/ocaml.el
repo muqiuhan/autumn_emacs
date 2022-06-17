@@ -36,6 +36,7 @@
 (define-key tuareg-mode-map (kbd "C-x x b") (lambda () (interactive) (dune-build)))
 (define-key tuareg-mode-map (kbd "C-x x t") (lambda () (interactive) (dune-test)))
 (define-key tuareg-mode-map (kbd "C-x x c") (lambda () (interactive) (dune-clean)))
+(define-key tuareg-mode-map (kbd "C-M-i") (lambda () (interactive) (ocamlformat)))
 
 ;; ## added by OPAM user-setup for emacs / base ## cfd3c9b7837c85cffd0c59de521990f0 ## you can edit, but keep this line
 (provide 'opam-user-setup)

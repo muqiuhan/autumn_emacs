@@ -12,7 +12,7 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Ubuntu Mono" "Consolas" "SF Mono" "Recursive Mono Linear Static" "JetBrains Mono" "IBM Plex Mono" "Roboto Mono" "Menlo" "Monaco"))
+(defconst *default-font-list* '("Ubuntu Mono" "Consolas Bold" "SF Mono" "Recursive Mono Linear Static" "JetBrains Mono" "IBM Plex Mono" "Roboto Mono" "Menlo" "Monaco"))
 
 (defconst *default-font-size* 125)
 
