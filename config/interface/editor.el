@@ -1,5 +1,3 @@
-(load "~/.emacs.d/site-lisp/real-time-cursor-color.el/real-time-cursor-color.el")
-
 (when *line-number*
   (if (version<= "26.0.50" emacs-version)
       (progn
@@ -37,9 +35,6 @@
 (when *smooth-scroll*
   (setq mouse-wheel-scroll-amount '(3 ((shift) . 6) ((control) . nil)))
   (setq mouse-wheel-progressive-speed nil))
-
-(when *real-time-cursor-color*
-  (real-time-cursor-color-mode t))
 
 (when *beacon*
   (beacon-mode 1))

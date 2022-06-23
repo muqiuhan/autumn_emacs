@@ -4,6 +4,7 @@
       (cond
        ((eq *mode-line* 'awesome-tray)
 	(progn
+	  (load "~/.emacs.d/site-lisp/awesome-tray.el")
 	  (require 'awesome-tray)
 	  (add-hook 'after-init-hook 'awesome-tray-mode)))
 

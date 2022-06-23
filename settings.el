@@ -12,9 +12,9 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Ubuntu Mono" "Consolas Bold" "SF Mono" "Recursive Mono Linear Static" "JetBrains Mono" "IBM Plex Mono" "Roboto Mono" "Menlo" "Monaco"))
+(defconst *default-font-list* '("Operator Mono" "Ubuntu Mono" "Consolas" "SF Mono" "Recursive Mono Linear Static" "JetBrains Mono" "IBM Plex Mono" "Roboto Mono" "Menlo" "Monaco"))
 
-(defconst *default-font-size* 125)
+(defconst *default-font-size* 115)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* nil)
@@ -70,7 +70,6 @@
 ;; Whether to enable multi-cursor editing
 (defconst *multiple-cursors* t)
 
-(defconst *real-time-cursor-color* nil) ;; Change cursor-color dynamically
 (defconst *cursor-color* nil)
 (defconst *cursor-type* nil)
 (defconst *beacon* t) ;; Whenever the window scrolls a light will shine on top of your cursor so you know where it is.

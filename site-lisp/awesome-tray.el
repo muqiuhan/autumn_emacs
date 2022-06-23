@@ -219,7 +219,6 @@
 
 (defcustom awesome-tray-update-interval 1
   "Interval in seconds between updating the awesome-tray contents.
-
 If nil, don't update the awesome-tray automatically."
   :group 'awesome-tray
   :type 'number)
@@ -263,7 +262,6 @@ If nil, don't update the awesome-tray automatically."
 
 (defcustom awesome-tray-git-update-duration 5
   "Update duration of git command, in seconds.
-
 It's very slow start new process in Windows platform.
 Maybe you need set this option with bigger value to speedup on Windows platform."
   :type 'integer
@@ -276,7 +274,6 @@ Maybe you need set this option with bigger value to speedup on Windows platform.
 
 (defcustom awesome-tray-battery-update-duration 5
   "Update duration of battery status, in seconds.
-
 It will make command `set-mark-command' failed if not use duration."
   :type 'integer
   :group 'awesome-tray)
@@ -318,7 +315,6 @@ It will make command `set-mark-command' failed if not use duration."
 
 (defcustom awesome-tray-file-path-truncated-name-length 1
   "In file-path module, how many letters to leave when truncate dirname.
-
 Beginning dots are not counted."
   :type 'integer
   :group 'awesome-tray)
@@ -332,7 +328,6 @@ their full name."
 (defcustom awesome-tray-file-path-truncate-dirname-levels 0
   "In file-path module, how many levels of parent directories should be shown in
 their first character.
-
 These goes before those shown in their full names."
   :type 'integer
   :group 'awesome-tray)
@@ -631,7 +626,6 @@ These goes before those shown in their full names."
 
 (defun awesome-tray-shrink-dir-name (name)
   "Shrink NAME to be its first letter, or the first two if starts \".\"
-
 NAME is a string, typically a directory name."
   (let ((dot-num (if (string-match "^\\.+" name)
                      (length (match-string 0 name))
