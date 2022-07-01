@@ -9,11 +9,10 @@
 (load "~/.emacs.d/config/util/treemacs.el")
 (load "~/.emacs.d/config/util/multiple-cursors.el")
 (load "~/.emacs.d/config/util/flycheck.el")
-(load "~/.emacs.d/config/util/org.el")
+(load "~/.emacs.d/config/util/write.el")
 (load "~/.emacs.d/config/util/highlight.el")
 (load "~/.emacs.d/config/util/which-key.el")
 (load "~/.emacs.d/config/util/youdao-dictionary.el")
-(load "~/.emacs.d/config/util/screenshot.el")
 (load "~/.emacs.d/config/util/company.el")
 
 (load "~/.emacs.d/config/interface/dashboard.el")
