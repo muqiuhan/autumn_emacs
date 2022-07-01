@@ -1,8 +1,8 @@
+;; OrgMode:
 (require 'org)
-(require 'olivetti)
+(require 'writeroom-mode)
 
-(setq-default olivetti-style 'fancy
-	      olivetti-minimum-body-width (truncate (/ (window-total-width) 1.5)))
+(setq-default writeroom-width (truncate (/ (window-total-width) 1.5)))
 
 (setq org-ellipsis " ⤵")
 
@@ -21,6 +21,9 @@
  '(org-level-7 ((t (:family "monospace"))))
  '(org-level-8 ((t (:family "monospace")))))
 
-(add-hook 'org-mode-hook 'olivetti-mode)
+(add-hook 'org-mode-hook 'writeroom-mode)
 
-(provide 'util-org)
+;; Markdown
+(add-hook 'markdown-mode-hook 'writeroom-mode)
+
+(provide 'util-write)

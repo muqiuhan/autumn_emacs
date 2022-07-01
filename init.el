@@ -10,7 +10,7 @@
     treemacs-magit
     treemacs-persp
     youdao-dictionary
-    olivetti
+    writeroom-mode
     which-key
     rainbow-identifiers
     flycheck-pos-tip

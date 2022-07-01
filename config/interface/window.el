@@ -7,10 +7,10 @@
 (when (not *tab-bar*)  
   (tab-bar-mode 0))
 
-(when (not *scroll-bar*)
-  (scroll-bar-mode 0))
-
 (when (display-graphic-p)
+  (when (not *scroll-bar*)
+    (scroll-bar-mode 0))
+  
   ;; window
   (defun x11-maximize-frame ()
     "Maximize the current frame (to full screen)"

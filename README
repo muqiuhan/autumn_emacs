@@ -1,8 +1,8 @@
 +------------------+
-+ Autumn Emacs 2.0 +
+| Autumn Emacs 2.0 |
 +------------------+
 
-	Lightweight and fast GNU Emacs configuration.
+	Lightweight, Fast, Pure Terminal GNU Emacs configuration.
 
 	Copyright (C) 2022 Muqiu Han
 
@@ -28,5 +28,3 @@ This profile is focused on improving the development experience of OCaml, Racket
 HOW TO USE?
 
 git clone https://github.com/muqiuhan/autumn_emacs ~/.emacs.d --depth=1
-
-
