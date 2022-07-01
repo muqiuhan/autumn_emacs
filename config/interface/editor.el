@@ -39,4 +39,7 @@
 (when *beacon*
   (beacon-mode 1))
 
+(when (not (display-graphic-p))
+  (xclip-mode))
+
 (provide 'interface-editor)
