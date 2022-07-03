@@ -20,6 +20,7 @@
 (load "~/.emacs.d/config/develop/ocaml.el")
 (load "~/.emacs.d/config/develop/rust.el")
 (load "~/.emacs.d/config/develop/racket.el")
+(load "~/.emacs.d/config/develop/fsharp.el")
 
 
 ;; ==================== custom Settings ====================
