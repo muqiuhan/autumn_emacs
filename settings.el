@@ -47,10 +47,10 @@
 (defconst *border-width* 0)
 
 ;; set the theme, Themes will be automatically selected based on time.
-(defconst *day-theme* 'leuven)
-(defconst *night-theme* 'modus-vivendi)
+(defconst *day-theme* 'doom-gruvbox-light)
+(defconst *night-theme* 'doom-gruvbox)
 (defconst *sunset-time* 19)
-(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'doom-gruvbox) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
