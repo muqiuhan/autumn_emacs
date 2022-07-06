@@ -3,6 +3,7 @@
     treemacs-projectile
     modern-cpp-font-lock
     vterm
+    doom-themes
     fsharp-mode
     ob-fsharp
     xclip
