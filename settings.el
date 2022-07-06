@@ -1,3 +1,30 @@
+;; settings.el --- User-defined configuration file -*- lexical-binding: t -*-
+
+;; Copyright (C) 2019-2022 Muqiu Han
+
+;; Author: Muqiu Han <muqiu-han@outlook.com>
+;; URL: https://github.com/muqiuhan/autumn_emacs
+
+;; This file is not part of GNU Emacs.
+;;
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License as
+;; published by the Free Software Foundation; either version 3, or
+;; (at your option) any later version.
+;;
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+;; General Public License for more details.
+;;
+;; You should have received a copy of the GNU General Public License
+;; along with this program; see the file COPYING.  If not, write to
+;; the Free Software Foundation, Inc., 51 Franklin Street, Fifth
+;; Floor, Boston, MA 02110-1301, USA.
+;;
+
+;;; Code:
+
 ;; ==================== Basic Settings ====================
 
 ;; Use mirror source, optional tuna/emacs-china/ustc/tencent/melpa
@@ -48,7 +75,7 @@
 
 ;; set the theme, Themes will be automatically selected based on time.
 (defconst *day-theme* 'doom-gruvbox-light)
-(defconst *night-theme* 'doom-gruvbox)
+(defconst *night-theme* 'modus-vivendi)
 (defconst *sunset-time* 19)
 (defconst *theme* 'doom-gruvbox) ;; if you want auto day/night theme, use 'auto
 
@@ -61,6 +88,12 @@
 
 ;; high contrast line numbers
 (defconst *highcontrast-line-number* t)
+
+;; highligh indent guides
+(defconst *highlight-indent-guides* t)
+
+;; high contrast indent guidelines
+(defconst *highcontrast-indent-guides* t)
 
 ;; use gnu-emacs 21 version of hi-line.el to highlighting the current line,
 ;; t is on, nil is off.
@@ -87,3 +120,6 @@
 
 ;; How flycheck is displayed (pos-tip / posframe / popup-tip)
 (defconst *flycheck-show-mode* 'posframe)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; settings.el ends here
