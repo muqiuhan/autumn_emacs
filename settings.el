@@ -59,6 +59,9 @@
 ;; see : https://www.emacswiki.org/emacs/LineNumbers
 (defconst *line-number* t)
 
+;; high contrast line numbers
+(defconst *highcontrast-line-number* t)
+
 ;; use gnu-emacs 21 version of hi-line.el to highlighting the current line,
 ;; t is on, nil is off.
 (defconst *hi-line* t)

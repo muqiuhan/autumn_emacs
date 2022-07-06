@@ -10,8 +10,9 @@
 	(load-theme *night-theme* t))
     (load-theme *theme* t)))
 
-(set-face-attribute 'line-number nil :background "#00a" :font (face-attribute 'default :font) :foreground "#aaa")
-(set-face-attribute 'line-number-current-line nil :background "#00f" :font (face-attribute 'default :font) :foreground "#fff")
+(when *highcontrast-line-number*
+    (set-face-attribute 'line-number nil :background "#00a" :font (face-attribute 'default :font) :foreground "#aaa")
+    (set-face-attribute 'line-number-current-line nil :background "#00f" :font (face-attribute 'default :font) :foreground "#fff"))
 
 (use-package vscode-icon
   :ensure t

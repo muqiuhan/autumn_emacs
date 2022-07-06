@@ -60,7 +60,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(cfrs-border-color ((t (:background "#a8a8a8"))))
+ '(cfrs-border-color ((t (:background "#928374"))))
  '(flycheck-posframe-background-face ((t (:inherit tooltip))))
  '(flycheck-posframe-border-face ((t (:inherit font-lock-comment-face))))
  '(flycheck-posframe-face ((t (:foreground "#44bc44"))))
