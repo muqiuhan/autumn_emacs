@@ -20,6 +20,8 @@
         along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+-------------------------------------------------------
+
 WHAT IS Autumn Emacs?
 
 Autumn Emacs is a GNU Emacs profile that is intended to be lightweight (portable) and fast. 
@@ -28,3 +30,13 @@ This profile is focused on improving the development experience of OCaml, Racket
 HOW TO USE?
 
 git clone https://github.com/muqiuhan/autumn_emacs ~/.emacs.d --depth=1
+
+-------------------------------------------------------
+
+FAQ
+
+1. The problem of the proxy
+   This configuration opens the proxy by default, which can be seen in the `Use Proxy` item of settings.el. If you don't need it, you can set it to nil and turn it off manually.
+
+1. The problem of the mirror of source
+   For mirror sources in mainland China, you can check the parameters of the `*mirror-source*` item to set
