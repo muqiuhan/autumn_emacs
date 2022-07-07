@@ -1,3 +1,4 @@
+
 ;; settings.el --- User-defined configuration file -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2019-2022 Muqiu Han
@@ -67,7 +68,7 @@
 
 ;; set the style of modeline, optional values: awesome-tray/doom-modeline/powerline/default/nil,
 ;; where nil means no modline is displayed
-(defconst *mode-line* 'powerline)
+(defconst *mode-line* 'default)
 
 ;; set the border width of the window (fringe-mode)
 ;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fringes.html
@@ -75,9 +76,9 @@
 
 ;; set the theme, Themes will be automatically selected based on time.
 (defconst *day-theme* 'doom-gruvbox-light)
-(defconst *night-theme* 'modus-vivendi)
+(defconst *night-theme* 'doom-gruvbox)
 (defconst *sunset-time* 19)
-(defconst *theme* 'doom-gruvbox) ;; if you want auto day/night theme, use 'auto
+(defconst *theme* 'modus-vivendi) ;; if you want auto day/night theme, use 'auto
 
 ;; ==================== Editor Settings ====================
 
@@ -97,7 +98,7 @@
 
 ;; use gnu-emacs 21 version of hi-line.el to highlighting the current line,
 ;; t is on, nil is off.
-(defconst *hi-line* t)
+(defconst *hi-line* nil)
 
 ;; Set smooth scrolling, which will set the number of rows to scroll at a time to 1,
 ;; and still scroll faster by holding down shift and scrolling

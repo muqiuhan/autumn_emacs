@@ -31,13 +31,15 @@
 (load-file "~/.emacs.d/config/interface/interface-window.el")
 (load-file "~/.emacs.d/config/interface/interface-editor.el")
 (load-file "~/.emacs.d/config/interface/interface-modeline.el")
+(load-file "~/.emacs.d/config/interface/interface-dashboard.el")
+(load-file "~/.emacs.d/config/interface/interface-theme.el")
 
 (load-file "~/.emacs.d/config/util/util-window-numbering.el")
 (load-file "~/.emacs.d/config/util/util-treemacs.el")
 (load-file "~/.emacs.d/config/util/util-multiple-cursors.el")
 (load-file "~/.emacs.d/config/util/util-flycheck.el")
 (load-file "~/.emacs.d/config/util/util-write.el")
-(load-file "~/.emacs.d/config/util/util-highlight.el")
+
 (load-file "~/.emacs.d/config/util/util-which-key.el")
 (load-file "~/.emacs.d/config/util/util-youdao-dictionary.el")
 (load-file "~/.emacs.d/config/util/util-company.el")
@@ -46,9 +48,6 @@
 (load-file "~/.emacs.d/config/develop/develop-rust.el")
 (load-file "~/.emacs.d/config/develop/develop-racket.el")
 (load-file "~/.emacs.d/config/develop/develop-fsharp.el")
-
-(load-file "~/.emacs.d/config/interface/interface-dashboard.el")
-(load-file "~/.emacs.d/config/interface/interface-theme.el")
 
 ;; ==================== custom Settings ====================
 
