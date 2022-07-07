@@ -30,6 +30,10 @@
 
 ;;; Code:
 
+(require 'major-mode-hydra)
+(require 'org)
+(require 'lsp-ui-sideline)
+
 (when (version<= "26.0.50" emacs-version)
   (use-package lsp-mode
     :diminish
@@ -261,62 +265,8 @@
 		(lambda ()
                   (setq lsp-ui-doc-border (face-foreground 'font-lock-comment-face nil t))
                   (set-face-background 'lsp-ui-doc-background (face-background 'tooltip nil t)))))
-
-    ;; Ivy integration
-    (use-package lsp-ivy
-      :after lsp-mode
-      :bind (:map lsp-mode-map
-		  ([remap xref-find-apropos] . lsp-ivy-workspace-symbol)
-		  ("C-s-." . lsp-ivy-global-workspace-symbol))
-      :config
-      (with-no-warnings
-	(when (icons-displayable-p)
-          (defvar lsp-ivy-symbol-kind-icons
-            `(,(all-the-icons-material "find_in_page" :height 0.9 :v-adjust -0.15) ; Unknown - 0
-              ,(all-the-icons-faicon "file-o" :height 0.9 :v-adjust -0.02) ; File - 1
-              ,(all-the-icons-material "view_module" :height 0.9 :v-adjust -0.15 :face 'all-the-icons-lblue) ; Module - 2
-              ,(all-the-icons-material "view_module" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-lblue) ; Namespace - 3
-              ,(all-the-icons-octicon "package" :height 0.9 :v-adjust -0.15) ; Package - 4
-              ,(all-the-icons-material "settings_input_component" :height 0.9 :v-adjust -0.15 :face 'all-the-icons-orange) ; Class - 5
-              ,(all-the-icons-faicon "cube" :height 0.9 :v-adjust -0.02 :face 'all-the-icons-purple) ; Method - 6
-              ,(all-the-icons-faicon "wrench" :height 0.8 :v-adjust -0.02) ; Property - 7
-              ,(all-the-icons-octicon "tag" :height 0.95 :v-adjust 0 :face 'all-the-icons-lblue) ; Field - 8
-              ,(all-the-icons-faicon "cube" :height 0.9 :v-adjust -0.02 :face 'all-the-icons-lpurple) ; Constructor - 9
-              ,(all-the-icons-material "storage" :height 0.9 :v-adjust -0.15 :face 'all-the-icons-orange) ; Enum - 10
-              ,(all-the-icons-material "share" :height 0.9 :v-adjust -0.15 :face 'all-the-icons-lblue) ; Interface - 11
-              ,(all-the-icons-faicon "cube" :height 0.9 :v-adjust -0.02 :face 'all-the-icons-purple) ; Function - 12
-              ,(all-the-icons-octicon "tag" :height 0.95 :v-adjust 0 :face 'all-the-icons-lblue) ; Variable - 13
-              ,(all-the-icons-faicon "cube" :height 0.9 :v-adjust -0.02 :face 'all-the-icons-purple) ; Constant - 14
-              ,(all-the-icons-faicon "text-width" :height 0.9 :v-adjust -0.02) ; String - 15
-              ,(all-the-icons-material "format_list_numbered" :height 0.95 :v-adjust -0.15) ; Number - 16
-              ,(all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-lblue) ; Boolean - 17
-              ,(all-the-icons-material "view_array" :height 0.95 :v-adjust -0.15) ; Array - 18
-              ,(all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0 :face 'all-the-icons-blue) ; Object - 19
-              ,(all-the-icons-faicon "key" :height 0.9 :v-adjust -0.02) ; Key - 20
-              ,(all-the-icons-octicon "tag" :height 0.9 :v-adjust 0.0) ; Null - 21
-              ,(all-the-icons-material "format_align_right" :height 0.95 :v-adjust -0.15 :face 'all-the-icons-lblue) ; EnumMember - 22
-              ,(all-the-icons-material "settings_input_component" :height 0.9 :v-adjust -0.15 :face 'all-the-icons-orange) ; Struct - 23
-              ,(all-the-icons-octicon "zap" :height 0.9 :v-adjust 0 :face 'all-the-icons-orange) ; Event - 24
-              ,(all-the-icons-material "control_point" :height 0.9 :v-adjust -0.15) ; Operator - 25
-              ,(all-the-icons-faicon "arrows" :height 0.9 :v-adjust -0.02) ; TypeParameter - 26
-              ))
-
-          (lsp-defun my-lsp-ivy--format-symbol-match
-	    ((sym &as &SymbolInformation :kind :location (&Location :uri))
-	     project-root)
-	    "Convert the match returned by `lsp-mode` into a candidate string."
-	    (let* ((sanitized-kind (if (< kind (length lsp-ivy-symbol-kind-icons)) kind 0))
-		   (type (elt lsp-ivy-symbol-kind-icons sanitized-kind))
-		   (typestr (if lsp-ivy-show-symbol-kind (format "%s " type) ""))
-		   (pathstr (if lsp-ivy-show-symbol-filename
-				(propertize (format " · %s" (file-relative-name (lsp--uri-to-path uri) project-root))
-					    'face font-lock-comment-face)
-			      "")))
-	      (concat typestr (lsp-render-symbol-information sym ".") pathstr)))
-          (advice-add #'lsp-ivy--format-symbol-match :override #'my-lsp-ivy--format-symbol-match))))
-
     ;; Debug
-    (when emacs/>=26p
+    (when (version<= "26.0.50" emacs-version)
       (use-package dap-mode
 	:defines dap-python-executable
 	:functions dap-hydra/nil
@@ -340,9 +290,7 @@
 	:init
 	(when (executable-find "python3")
           (setq dap-python-executable "python3"))))
-
-    ;; `lsp-mode' and `treemacs' integration
-    (when emacs/>=25.2p
+    
       (use-package lsp-treemacs
 	:after lsp-mode
 	:bind (:map lsp-mode-map
@@ -525,7 +473,7 @@
 		 :icon (format "%s " (all-the-icons-octicon "repo" :height 1.0 :v-adjust -0.1 :face 'all-the-icons-blue))
 		 :extensions (java-project))))
 
-            (setq lsp-treemacs-theme "autumn-emacs-colors")))))
+            (setq lsp-treemacs-theme "autumn-emacs-colors"))))
 
     ;; Python: pyright
     (use-package lsp-pyright
@@ -558,26 +506,6 @@
           (when-let ((xrefs (lsp--locations-to-xref-items
                              (lsp--send-execute-command (symbol-name command) arguments))))
             (xref--show-xrefs xrefs nil)))
-	(advice-add #'lsp-execute-command :override #'my-lsp-execute-command)))
-
-    ;; Swift/C/C++/Objective-C
-    (when sys/macp
-      (use-package lsp-sourcekit))
-
-    ;; Julia support
-    (use-package lsp-julia
-      :hook (julia-mode . (lambda () (require 'lsp-julia))))
-
-    ;; Java support
-    (when emacs/>=25.2p
-      (use-package lsp-java
-	:hook (java-mode . (lambda () (require 'lsp-java)))))))
-
-(defvar org-babel-lang-list
-  '("go" "python" "ipython" "ruby" "js" "css" "sass" "c" "rust" "java" "cpp" "c++"))
-(add-to-list 'org-babel-lang-list (if emacs/>=26p "shell" "sh"))
-(dolist (lang org-babel-lang-list)
-  (eval `(lsp-org-babel-enable ,lang)))
-
+	(advice-add #'lsp-execute-command :override #'my-lsp-execute-command)))))
 
 (provide 'util-lsp)

@@ -31,11 +31,11 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (require 'config-package)
+(require 'interface-dashboard)
 
 (require 'interface-window)
 (require 'interface-editor)
 (require 'interface-modeline)
-(require 'interface-dashboard)
 (require 'interface-theme)
 
 (require 'util-window-numbering)
@@ -43,6 +43,7 @@
 (require 'util-multiple-cursors)
 (require 'util-flycheck)
 (require 'util-write)
+(require 'util-lsp)
 
 (require 'util-which-key)
 (require 'util-youdao-dictionary)

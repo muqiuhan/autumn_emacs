@@ -196,6 +196,9 @@ FACE defaults to inheriting from default and highlight."
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
+(use-package rainbow-identifiers
+  :hook (prog-mode . rainbow-identifiers-mode))
+
 ;; Highlight TODO and similar keywords in comments and strings
 (use-package hl-todo
   :custom-face

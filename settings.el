@@ -122,5 +122,8 @@
 ;; How flycheck is displayed (pos-tip / posframe / popup-tip)
 (defconst *flycheck-show-mode* 'posframe)
 
+;; lsp
+(defconst *lsp* t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; settings.el ends here
