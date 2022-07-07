@@ -29,7 +29,7 @@
 
 (global-set-key
  (kbd *youdao-dictionary-key*)
- '(lambda ()
+ #'(lambda ()
     (interactive)
     (if (display-graphic-p)
       (cond

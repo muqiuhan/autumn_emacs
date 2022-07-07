@@ -25,29 +25,33 @@
 
 ;;; Code:
 
+(let ((default-directory  "~/.emacs.d/config/"))
+  (normal-top-level-add-subdirs-to-load-path))
 
-(load-file "~/.emacs.d/config/config-package.el")
+(add-to-list 'load-path "~/.emacs.d/config")
 
-(load-file "~/.emacs.d/config/interface/interface-window.el")
-(load-file "~/.emacs.d/config/interface/interface-editor.el")
-(load-file "~/.emacs.d/config/interface/interface-modeline.el")
-(load-file "~/.emacs.d/config/interface/interface-dashboard.el")
-(load-file "~/.emacs.d/config/interface/interface-theme.el")
+(require 'config-package)
 
-(load-file "~/.emacs.d/config/util/util-window-numbering.el")
-(load-file "~/.emacs.d/config/util/util-treemacs.el")
-(load-file "~/.emacs.d/config/util/util-multiple-cursors.el")
-(load-file "~/.emacs.d/config/util/util-flycheck.el")
-(load-file "~/.emacs.d/config/util/util-write.el")
+(require 'interface-window)
+(require 'interface-editor)
+(require 'interface-modeline)
+(require 'interface-dashboard)
+(require 'interface-theme)
 
-(load-file "~/.emacs.d/config/util/util-which-key.el")
-(load-file "~/.emacs.d/config/util/util-youdao-dictionary.el")
-(load-file "~/.emacs.d/config/util/util-company.el")
+(require 'util-window-numbering)
+(require 'util-treemacs)
+(require 'util-multiple-cursors)
+(require 'util-flycheck)
+(require 'util-write)
 
-(load-file "~/.emacs.d/config/develop/develop-ocaml.el")
-(load-file "~/.emacs.d/config/develop/develop-rust.el")
-(load-file "~/.emacs.d/config/develop/develop-racket.el")
-(load-file "~/.emacs.d/config/develop/develop-fsharp.el")
+(require 'util-which-key)
+(require 'util-youdao-dictionary)
+(require 'util-company)
+
+(require 'develop-ocaml)
+(require 'develop-rust)
+(require 'develop-racket)
+(require 'develop-fsharp)
 
 ;; ==================== custom Settings ====================
 
