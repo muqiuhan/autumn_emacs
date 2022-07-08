@@ -91,10 +91,16 @@
 (defconst *highcontrast-line-number* t)
 
 ;; highligh indent guides
-(defconst *highlight-indent-guides* t)
+(defconst *highlight-indent-guides* nil)
 
 ;; high contrast indent guidelines
-(defconst *highcontrast-indent-guides* t)
+(defconst *highcontrast-indent-guides* nil)
+
+;; Rainbow identifiers
+(defconst *rainbow-identifiers* t)
+
+;; Rainbow delimiters
+(defconst *rainbow-delimiters* t)
 
 ;; use gnu-emacs 21 version of hi-line.el to highlighting the current line,
 ;; t is on, nil is off.

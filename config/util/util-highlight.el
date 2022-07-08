@@ -126,7 +126,9 @@ FACE defaults to inheriting from default and highlight."
     :hook ((prog-mode yaml-mode emacs-lisp-mode) . highlight-indent-guides-mode)
     :init (setq highlight-indent-guides-method 'character
 		highlight-indent-guides-responsive 'top
-		highlight-indent-guides-suppress-auto-error t)
+		highlight-indent-guides-suppress-auto-error t
+		highlight-indent-guides-delay 0
+		highlight-indent-guides-character ?\x2502)
 
     :config
     (when *highcontrast-indent-guides*
@@ -196,11 +198,13 @@ FACE defaults to inheriting from default and highlight."
     (advice-add #'rainbow-turn-off :after #'my-rainbow-clear-overlays)))
 
 ;; Highlight brackets according to their depth
-(use-package rainbow-delimiters
-  :hook ((prog-mode emacs-lisp-mode) . rainbow-delimiters-mode))
+(when *rainbow-delimiters*
+  (use-package rainbow-delimiters
+    :hook ((prog-mode emacs-lisp-mode) . rainbow-delimiters-mode)))
 
-(use-package rainbow-identifiers
-  :hook ((prog-mode emacs-lisp-mode) . rainbow-identifiers-mode))
+(when *rainbow-identifiers*
+  (use-package rainbow-identifiers
+    :hook ((prog-mode emacs-lisp-mode) . rainbow-identifiers-mode)))
 
 ;; Highlight TODO and similar keywords in comments and strings
 (use-package hl-todo
