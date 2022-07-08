@@ -122,55 +122,58 @@ FACE defaults to inheriting from default and highlight."
 ;; Highlight indentions
 (when *highlight-indent-guides*
   (use-package highlight-indent-guides
-  :diminish
-  :hook ((prog-mode yaml-mode) . highlight-indent-guides-mode)
-  :init (setq highlight-indent-guides-method 'character
-              highlight-indent-guides-responsive 'top
-              highlight-indent-guides-suppress-auto-error t)
+    :diminish
+    :hook ((prog-mode yaml-mode emacs-lisp-mode) . highlight-indent-guides-mode)
+    :init (setq highlight-indent-guides-method 'character
+		highlight-indent-guides-responsive 'top
+		highlight-indent-guides-suppress-auto-error t)
 
-  :config
-  (with-no-warnings
-    ;; Don't display first level of indentation
-    (defun my-indent-guides-for-all-but-first-column (level responsive display)
-      (unless (< level 1)
-        (highlight-indent-guides--highlighter-default level responsive display)))
-    (setq highlight-indent-guides-highlighter-function
-          #'my-indent-guides-for-all-but-first-column)
+    :config
+    (when *highcontrast-indent-guides*
+      (set-face-attribute 'highlight-indent-guides-character-face nil :foreground (face-attribute 'default :foreground)))
+    
+    (with-no-warnings
+      ;; Don't display first level of indentation
+      (defun my-indent-guides-for-all-but-first-column (level responsive display)
+	(unless (< level 1)
+          (highlight-indent-guides--highlighter-default level responsive display)))
+      (setq highlight-indent-guides-highlighter-function
+            #'my-indent-guides-for-all-but-first-column)
 
-    ;; Disable in `macrostep' expanding
-    (with-eval-after-load 'macrostep
-      (advice-add #'macrostep-expand
-                  :after (lambda (&rest _)
-                           (when highlight-indent-guides-mode
-                             (highlight-indent-guides-mode -1))))
-      (advice-add #'macrostep-collapse
-                  :after (lambda (&rest _)
-                           (when (derived-mode-p 'prog-mode 'yaml-mode)
-                             (highlight-indent-guides-mode 1)))))
+      ;; Disable in `macrostep' expanding
+      (with-eval-after-load 'macrostep
+	(advice-add #'macrostep-expand
+                    :after (lambda (&rest _)
+                             (when highlight-indent-guides-mode
+                               (highlight-indent-guides-mode -1))))
+	(advice-add #'macrostep-collapse
+                    :after (lambda (&rest _)
+                             (when (derived-mode-p 'prog-mode 'yaml-mode)
+                               (highlight-indent-guides-mode 1)))))
 
-    ;; Don't display indentations in `swiper'
-    ;; https://github.com/DarthFennec/highlight-indent-guides/issues/40
-    (with-eval-after-load 'ivy
-      (defun my-ivy-cleanup-indentation (str)
-        "Clean up indentation highlighting in ivy minibuffer."
-        (let ((pos 0)
-              (next 0)
-              (limit (length str))
-              (prop 'highlight-indent-guides-prop))
-          (while (and pos next)
-            (setq next (text-property-not-all pos limit prop nil str))
-            (when next
-              (setq pos (text-property-any next limit prop nil str))
-              (ignore-errors
-                (remove-text-properties next pos '(display nil face nil) str))))))
-      (advice-add #'ivy-cleanup-string :after #'my-ivy-cleanup-indentation)))))
+      ;; Don't display indentations in `swiper'
+      ;; https://github.com/DarthFennec/highlight-indent-guides/issues/40
+      (with-eval-after-load 'ivy
+	(defun my-ivy-cleanup-indentation (str)
+          "Clean up indentation highlighting in ivy minibuffer."
+          (let ((pos 0)
+		(next 0)
+		(limit (length str))
+		(prop 'highlight-indent-guides-prop))
+            (while (and pos next)
+              (setq next (text-property-not-all pos limit prop nil str))
+              (when next
+		(setq pos (text-property-any next limit prop nil str))
+		(ignore-errors
+                  (remove-text-properties next pos '(display nil face nil) str))))))
+	(advice-add #'ivy-cleanup-string :after #'my-ivy-cleanup-indentation)))))
 
 ;; Colorize color names in buffers
 (use-package rainbow-mode
   :diminish
   :defines helpful-mode-map
   :bind (:map help-mode-map
-         ("w" . rainbow-mode))
+              ("w" . rainbow-mode))
   :hook ((html-mode php-mode helpful-mode) . rainbow-mode)
   :init (with-eval-after-load 'helpful
           (bind-key "w" #'rainbow-mode helpful-mode-map))
@@ -194,21 +197,21 @@ FACE defaults to inheriting from default and highlight."
 
 ;; Highlight brackets according to their depth
 (use-package rainbow-delimiters
-  :hook (prog-mode . rainbow-delimiters-mode))
+  :hook ((prog-mode emacs-lisp-mode) . rainbow-delimiters-mode))
 
 (use-package rainbow-identifiers
-  :hook (prog-mode . rainbow-identifiers-mode))
+  :hook ((prog-mode emacs-lisp-mode) . rainbow-identifiers-mode))
 
 ;; Highlight TODO and similar keywords in comments and strings
 (use-package hl-todo
   :custom-face
   (hl-todo ((t (:inherit default :height 0.9 :width condensed :weight bold :underline nil :inverse-video t))))
   :bind (:map hl-todo-mode-map
-         ([C-f3]    . hl-todo-occur)
-         ("C-c t p" . hl-todo-previous)
-         ("C-c t n" . hl-todo-next)
-         ("C-c t o" . hl-todo-occur)
-         ("C-c t i" . hl-todo-insert))
+              ([C-f3]    . hl-todo-occur)
+              ("C-c t p" . hl-todo-previous)
+              ("C-c t n" . hl-todo-next)
+              ("C-c t o" . hl-todo-occur)
+              ("C-c t i" . hl-todo-insert))
   :hook (after-init . global-hl-todo-mode)
   :init (setq hl-todo-require-punctuation t
               hl-todo-highlight-punctuation ":")
@@ -221,7 +224,7 @@ FACE defaults to inheriting from default and highlight."
 ;; Highlight uncommitted changes using VC
 (use-package diff-hl
   :bind (:map diff-hl-command-map
-         ("SPC" . diff-hl-mark-hunk))
+              ("SPC" . diff-hl-mark-hunk))
   :hook ((after-init . global-diff-hl-mode)
          (dired-mode . diff-hl-dired-mode)
          ((after-init after-load-theme server-after-make-frame) . my-set-diff-hl-faces))
@@ -241,14 +244,6 @@ FACE defaults to inheriting from default and highlight."
      '(diff-hl-delete ((t (:inherit diff-removed :background nil))))))
 
   (with-no-warnings
-    (defun my-diff-hl-fringe-bmp-function (_type _pos)
-      "Fringe bitmap function for use as `diff-hl-fringe-bmp-function'."
-      (define-fringe-bitmap 'my-diff-hl-bmp
-        (vector (if sys/macp #b11100000 #b11111100))
-        1 8
-        '(center t)))
-    (setq diff-hl-fringe-bmp-function #'my-diff-hl-fringe-bmp-function)
-
     (unless (display-graphic-p)
       ;; Fall back to the display margin since the fringe is unavailable in tty
       (diff-hl-margin-mode 1)

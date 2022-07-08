@@ -39,11 +39,8 @@
     (load-theme *theme* t)))
 
 (when *highcontrast-line-number*
-    (set-face-attribute 'line-number nil :background "#00a" :font (face-attribute 'default :font) :foreground "#aaa")
-    (set-face-attribute 'line-number-current-line nil :background "#00f" :font (face-attribute 'default :font) :foreground "#fff"))
-
-(when *highcontrast-indent-guides*
-    (set-face-attribute 'highlight-indent-guides-character-face 'nil :foreground "#B57614"))
+  (set-face-attribute 'line-number nil :background "#00a" :font (face-attribute 'default :font) :foreground "#aaa")
+  (set-face-attribute 'line-number-current-line nil :background "#00f" :font (face-attribute 'default :font) :foreground "#fff"))
 
 (use-package vscode-icon
   :ensure t

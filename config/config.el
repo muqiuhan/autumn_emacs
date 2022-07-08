@@ -44,6 +44,7 @@
 (require 'util-flycheck)
 (require 'util-write)
 (require 'util-lsp)
+(require 'util-highlight)
 
 (require 'util-which-key)
 (require 'util-youdao-dictionary)
