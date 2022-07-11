@@ -33,10 +33,10 @@
 (require 'config-package)
 (require 'interface-dashboard)
 
-(require 'interface-window)
 (require 'interface-editor)
 (require 'interface-modeline)
 (require 'interface-theme)
+(require 'interface-window)
 
 (require 'util-window-numbering)
 (require 'util-treemacs)
@@ -44,7 +44,7 @@
 (require 'util-flycheck)
 (require 'util-write)
 (require 'util-lsp)
-(require 'util-vterm)
+(require 'util-shell)
 (require 'util-highlight)
 (require 'util-which-key)
 (require 'util-youdao-dictionary)

@@ -50,7 +50,6 @@
 ;; configure whether to display certain controls.
 (defconst *menu-bar* nil)
 (defconst *tool-bar* nil)
-(defconst *sort-tab* nil)
 
 ;; start window size
 (defconst *start-window* 'max)
