@@ -1,4 +1,4 @@
-;; util-vterm.el --- Treemacs configuration -*- lexical-binding: t -*-
+;; util-vterm.el --- Vterm configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2019-2022 Muqiu Han
 
