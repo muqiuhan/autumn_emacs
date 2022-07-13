@@ -82,13 +82,7 @@
     (lsp-headerline-breadcrumb-symbols-hint-face
      ((t :inherit lsp-headerline-breadcrumb-symbols-face
          :underline (:style wave :color ,(face-foreground 'success)))))
-    :hook ((prog-mode . (lambda ()
-                          (unless (derived-mode-p 'emacs-lisp-mode 'lisp-mode 'makefile-mode)
-                            (lsp-deferred))))
-           (markdown-mode . lsp-deferred)
-           (lsp-mode . (lambda ()
-                         ;; Integrate `which-key'
-                         (lsp-enable-which-key-integration))))
+
     :bind (:map lsp-mode-map
 		("C-c C-d" . lsp-describe-thing-at-point)
 		([remap xref-find-definitions] . lsp-find-definition)
