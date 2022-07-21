@@ -40,7 +40,8 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("SF Mono Medium" "Consolas" "Operator Mono" "Monego" "Ubuntu Mono" "JetBrains Mono" "IBM Plex Mono" "Roboto Mono" "Menlo" "Monaco"))
+(defconst *default-font-list* '("Recursive Mn Lnr St SmB" "Consolas" "SF Mono" "Operator Mono" "Monego"
+				"Ubuntu Mono" "JetBrains Mono" "IBM Plex Mono" "Roboto Mono" "Menlo" "Monaco"))
 
 (defconst *default-font-size* 125)
 
@@ -67,7 +68,7 @@
 
 ;; set the style of modeline, optional values: awesome-tray/doom-modeline/powerline/default/nil,
 ;; where nil means no modline is displayed
-(defconst *mode-line* 'default)
+(defconst *mode-line* 'powerline)
 
 ;; set the border width of the window (fringe-mode)
 ;; see: https://www.gnu.org/software/emacs/manual/html_node/emacs/Fringes.html
@@ -113,7 +114,7 @@
 (defconst *multiple-cursors* t)
 
 (defconst *cursor-color* nil)
-(defconst *cursor-type* 'bar)
+(defconst *cursor-type* nil)
 (defconst *beacon* t) ;; Whenever the window scrolls a light will shine on top of your cursor so you know where it is.
 
 ;; ==================== Util Settings ====================

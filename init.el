@@ -91,7 +91,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(cmake-mode rspec-mode youdao-dictionary yasnippet xclip writeroom-mode window-numbering which-key vterm vscode-icon volatile-highlights use-package tuareg treemacs-projectile treemacs-persp treemacs-magit symbol-overlay shrink-path rustic rainbow-mode rainbow-identifiers rainbow-delimiters racket-mode powerline popper org-superstar ocp-indent ocamlformat ob-fsharp multiple-cursors modern-cpp-font-lock merlin major-mode-hydra lsp-ui lsp-pyright hl-todo highlight-indent-guides flycheck-posframe flycheck-pos-tip flycheck-popup-tip esup dune-format dune doom-themes diff-hl dashboard dap-mode company-prescient company-box cider ccls beacon all-the-icons)))
+   '(clang-format cmake-mode rspec-mode youdao-dictionary yasnippet xclip writeroom-mode window-numbering which-key vterm vscode-icon volatile-highlights use-package tuareg treemacs-projectile treemacs-persp treemacs-magit symbol-overlay shrink-path rustic rainbow-mode rainbow-identifiers rainbow-delimiters racket-mode powerline popper org-superstar ocp-indent ocamlformat ob-fsharp multiple-cursors modern-cpp-font-lock merlin major-mode-hydra lsp-ui lsp-pyright hl-todo highlight-indent-guides flycheck-posframe flycheck-pos-tip flycheck-popup-tip esup dune-format dune doom-themes diff-hl dashboard dap-mode company-prescient company-box cider ccls beacon all-the-icons)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

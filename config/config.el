@@ -31,12 +31,6 @@
 (add-to-list 'load-path "~/.emacs.d/config")
 
 (require 'config-package)
-(require 'interface-dashboard)
-
-(require 'interface-editor)
-(require 'interface-modeline)
-(require 'interface-theme)
-(require 'interface-window)
 
 (require 'util-window-numbering)
 (require 'util-treemacs)
@@ -54,6 +48,12 @@
 (require 'develop-rust)
 (require 'develop-racket)
 (require 'develop-fsharp)
+
+(require 'interface-dashboard)
+(require 'interface-editor)
+(require 'interface-modeline)
+(require 'interface-window)
+(require 'interface-theme)
 
 ;; ==================== custom Settings ====================
 

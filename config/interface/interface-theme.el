@@ -38,9 +38,13 @@
 	(load-theme *night-theme* t))
     (load-theme *theme* t)))
 
+;; Anyway, make sure the line number font is the same as the default font first
+(set-face-attribute 'line-number nil :font (face-attribute 'default :font))
+(set-face-attribute 'line-number-current-line nil :font (face-attribute 'default :font))
+
 (when *highcontrast-line-number*
-  (set-face-attribute 'line-number nil :background "#00a" :font (face-attribute 'default :font) :foreground "#aaa")
-  (set-face-attribute 'line-number-current-line nil :background "#00f" :font (face-attribute 'default :font) :foreground "#fff"))
+  (set-face-attribute 'line-number nil :background "#00a" :foreground "#aaa")
+  (set-face-attribute 'line-number-current-line nil :background "#00f" :foreground "#fff"))
 
 (use-package vscode-icon
   :ensure t
