@@ -40,10 +40,10 @@
 
 ;; set the default font-list and font height, nil to use default
 ;; the fonts that exist in the system will be select from it.
-(defconst *default-font-list* '("Recursive Mn Lnr St SmB" "Consolas" "SF Mono" "Operator Mono" "Monego"
+(defconst *default-font-list* '("Monego" "Cascadia Code" "Consolas Bold" "SF Mono" "Operator Mono"
 				"Ubuntu Mono" "JetBrains Mono" "IBM Plex Mono" "Roboto Mono" "Menlo" "Monaco"))
 
-(defconst *default-font-size* 125)
+(defconst *default-font-size* 110)
 
 ;; Whether to enable font hyphenation effect (provided that the font supports hyphenation)
 (defconst *font-ligature* nil)
@@ -53,7 +53,7 @@
 (defconst *tool-bar* nil)
 
 ;; start window size
-(defconst *start-window* 'max)
+(defconst *start-window* nil)
 
 ;; window opacity
 (defconst *window-opacity* 100)

@@ -91,7 +91,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(clang-format cmake-mode rspec-mode youdao-dictionary yasnippet xclip writeroom-mode window-numbering which-key vterm vscode-icon volatile-highlights use-package tuareg treemacs-projectile treemacs-persp treemacs-magit symbol-overlay shrink-path rustic rainbow-mode rainbow-identifiers rainbow-delimiters racket-mode powerline popper org-superstar ocp-indent ocamlformat ob-fsharp multiple-cursors modern-cpp-font-lock merlin major-mode-hydra lsp-ui lsp-pyright hl-todo highlight-indent-guides flycheck-posframe flycheck-pos-tip flycheck-popup-tip esup dune-format dune doom-themes diff-hl dashboard dap-mode company-prescient company-box cider ccls beacon all-the-icons)))
+   '(nyan-mode clang-format cmake-mode rspec-mode youdao-dictionary yasnippet xclip writeroom-mode window-numbering which-key vterm vscode-icon volatile-highlights use-package tuareg treemacs-projectile treemacs-persp treemacs-magit symbol-overlay shrink-path rustic rainbow-mode rainbow-identifiers rainbow-delimiters racket-mode powerline popper org-superstar ocp-indent ocamlformat ob-fsharp multiple-cursors modern-cpp-font-lock merlin major-mode-hydra lsp-ui lsp-pyright hl-todo highlight-indent-guides flycheck-posframe flycheck-pos-tip flycheck-popup-tip esup dune-format dune doom-themes diff-hl dashboard dap-mode company-prescient company-box cider ccls beacon all-the-icons)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -100,19 +100,23 @@
  '(aw-leading-char-face ((t (:inherit font-lock-keyword-face :bold t :height 2.0))))
  '(aw-minibuffer-leading-char-face ((t (:inherit font-lock-keyword-face :bold t :height 1.0))))
  '(aw-mode-line-face ((t (:inherit mode-line-emphasis :bold t))))
- '(cfrs-border-color ((t (:background "#a8a8a8"))))
+ '(cfrs-border-color ((t (:background "Firebrick"))))
  '(diff-hl-change ((t (:foreground nil :background nil))))
  '(diff-hl-delete ((t (:inherit diff-removed :background nil))))
  '(diff-hl-insert ((t (:inherit diff-added :background nil))))
+ '(flycheck-posframe-background-face ((t (:inherit tooltip))))
+ '(flycheck-posframe-border-face ((t (:inherit font-lock-comment-face))))
+ '(flycheck-posframe-face ((t (:foreground "ForestGreen"))))
+ '(flycheck-posframe-info-face ((t (:foreground "ForestGreen"))))
  '(hl-todo ((t (:inherit default :height 0.9 :width condensed :weight bold :underline nil :inverse-video t))))
- '(lsp-headerline-breadcrumb-path-error-face ((t :underline (:style wave :color "#ff8059") :inherit lsp-headerline-breadcrumb-path-face)))
- '(lsp-headerline-breadcrumb-path-hint-face ((t :underline (:style wave :color nil) :inherit lsp-headerline-breadcrumb-path-face)))
- '(lsp-headerline-breadcrumb-path-info-face ((t :underline (:style wave :color nil) :inherit lsp-headerline-breadcrumb-path-face)))
- '(lsp-headerline-breadcrumb-path-warning-face ((t :underline (:style wave :color "#d0bc00") :inherit lsp-headerline-breadcrumb-path-face)))
- '(lsp-headerline-breadcrumb-symbols-error-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#ff8059"))))
- '(lsp-headerline-breadcrumb-symbols-hint-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color nil))))
- '(lsp-headerline-breadcrumb-symbols-info-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color nil))))
- '(lsp-headerline-breadcrumb-symbols-warning-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "#d0bc00"))))
+ '(lsp-headerline-breadcrumb-path-error-face ((t :underline (:style wave :color "Red1") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-path-hint-face ((t :underline (:style wave :color "ForestGreen") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-path-info-face ((t :underline (:style wave :color "ForestGreen") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-path-warning-face ((t :underline (:style wave :color "DarkOrange") :inherit lsp-headerline-breadcrumb-path-face)))
+ '(lsp-headerline-breadcrumb-symbols-error-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "Red1"))))
+ '(lsp-headerline-breadcrumb-symbols-hint-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "ForestGreen"))))
+ '(lsp-headerline-breadcrumb-symbols-info-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "ForestGreen"))))
+ '(lsp-headerline-breadcrumb-symbols-warning-face ((t :inherit lsp-headerline-breadcrumb-symbols-face :underline (:style wave :color "DarkOrange"))))
  '(lsp-ui-sideline-code-action ((t (:inherit warning))))
  '(org-level-1 ((t (:family "monospace" :height 1.3))))
  '(org-level-2 ((t (:family "monospace" :height 1.2))))

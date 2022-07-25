@@ -112,7 +112,22 @@
    ((eq *mode-line* 'powerline)
     (progn
       (require-package 'powerline)
-      (add-hook 'after-init-hook 'powerline-center-theme)))
+
+      (require 'powerline)
+      
+      (set-face-attribute 'powerline-active0 nil
+			  :foreground "#ddd"
+			  :background "#00a")
+
+      (set-face-attribute 'powerline-active1 nil
+			  :foreground "#fff"
+			  :background "#005")
+
+      (set-face-attribute 'powerline-active2 nil
+			  :foreground (face-attribute 'default :foreground)
+			  :background (face-attribute 'default :background))
+      
+      (add-hook 'dashboard-mode-hook 'powerline-center-theme)))
 
    ((eq *mode-line* 'doom-modeline)
     (progn
