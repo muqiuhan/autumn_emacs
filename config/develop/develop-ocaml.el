@@ -1,4 +1,4 @@
-;; ocaml.el --- OCaml configuration -*- lexical-binding: t -*-
+;; develop-ocaml.el --- OCaml configuration -*- lexical-binding: t -*-
 
 ;; Copyright (C) 2019-2022 Muqiu Han
 

@@ -43,6 +43,7 @@
 (require 'util-which-key)
 (require 'util-youdao-dictionary)
 (require 'util-company)
+(require 'util-gtd)
 
 (require 'develop-ocaml)
 (require 'develop-rust)
